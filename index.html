@@ -421,9 +421,19 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
-    main { grid-template-columns: 1fr; grid-template-rows: 50vh 1fr; }
-    .panel { border-left: none; border-top: 1px solid rgba(0,0,0,0.12); box-shadow: inset 0 8px 16px -8px rgba(0,0,0,0.18); }
+    /* Drop the grid: map gets a fixed viewport-relative height, panel grows
+       to fit its content, body scrolls the whole page. Without this, tall
+       filter bars squeeze main and the panel's 1fr row collapses to ~0. */
     body { overflow: auto; }
+    main { display: block; flex: 0 0 auto; }
+    #map { height: 55vh; width: 100%; }
+    .panel {
+      height: auto;
+      overflow: visible;
+      border-left: none;
+      border-top: 1px solid rgba(0,0,0,0.12);
+      box-shadow: inset 0 8px 16px -8px rgba(0,0,0,0.18);
+    }
   }
   @media (max-width: 600px) {
     header { padding: 0 14px; height: 42px; }
@@ -440,7 +450,7 @@
     .chip { padding: 8px 13px; font-size: 13px; }
     .clear-btn { padding: 8px 13px; font-size: 12.5px; margin-left: 0; align-self: flex-start; }
 
-    main { grid-template-rows: 42vh 1fr; }
+    #map { height: 50vh; }
     .panel { padding: 22px 18px 60px; }
     .panel h2 { font-size: 24px; }
 
