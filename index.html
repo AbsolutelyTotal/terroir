@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WSET Level 2 Wine Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍇</text></svg>">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; padding: 0; }
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #e8e6e0;
+    background: #16181f;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ---------- Header (slim app bar, dark) ---------- */
+  header {
+    flex: 0 0 auto;
+    height: 44px;
+    padding: 0 24px;
+    background: #1e2128;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 13.5px;
+    letter-spacing: 0.1px;
+    color: #e8e6e0;
+  }
+  .wordmark .mark {
+    font-weight: 700;
+    color: #d4504e;
+    letter-spacing: 0.3px;
+  }
+  .wordmark .sep {
+    color: rgba(255,255,255,0.25);
+    font-weight: 400;
+  }
+  .wordmark .tag {
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+  }
+  .info-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
+    color: rgba(255,255,255,0.7);
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .info-btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.32); color: #fff; }
+  .info-btn .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+  }
+
+  /* ---------- About popover ---------- */
+  .popover-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 10, 14, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 1000;
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 56px 24px 24px;
+  }
+  .popover-backdrop.open { display: flex; }
+  .popover {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.04);
+    padding: 22px 24px 20px;
+    max-width: 340px;
+    width: 100%;
+    animation: popIn 0.18s ease-out;
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .popover h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2a0e15;
+  }
+  .popover p {
+    margin: 0 0 14px;
+    font-size: 13px;
+    color: #4a4a4a;
+    line-height: 1.5;
+  }
+  .popover .climate-key {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+    padding-top: 14px;
+    border-top: 1px solid #f1ede5;
+  }
+  .popover .climate-key .key-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9b9b9b;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .popover .climate-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #2a2a2a;
+  }
+  .popover .climate-dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1.5px #fff, 0 1px 3px rgba(0,0,0,0.18);
+    flex-shrink: 0;
+  }
+
+  /* ---------- Filter bars (dark) ---------- */
+  .filter-bar {
+    flex: 0 0 auto;
+    padding: 11px 24px;
+    background: #1e2128;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    align-items: center;
+  }
+  .filter-bar + .filter-bar { border-top: none; }
+  .filter-bar.grouped {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding-top: 9px;
+    padding-bottom: 11px;
+    flex-wrap: nowrap;
+  }
+  .filter-bar:not(.grouped) {
+    display: grid;
+    grid-template-columns: 84px 1fr auto;
+    align-items: start;
+    gap: 6px 10px;
+  }
+  .filter-bar .label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.42);
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    padding-top: 6px;
+  }
+  .filter-bar .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+  .grape-group {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    align-items: start;
+    gap: 6px 10px;
+  }
+  .grape-group .group-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.38);
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    padding-top: 7px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.85);
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+    user-select: none;
+    line-height: 1.2;
+  }
+  .chip:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.18); color: #fff; transform: translateY(-1px); }
+  .chip:active { transform: translateY(0); }
+  .chip.active {
+    background: linear-gradient(180deg, #b53a4a 0%, #8a2832 100%);
+    color: #fff;
+    border-color: #d4504e;
+    box-shadow: 0 2px 12px rgba(180, 58, 74, 0.4);
+  }
+  .chip::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 7px;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1.5px rgba(255,255,255,0.06);
+  }
+  .chip.black::before { background: #d4504e; }
+  .chip.white::before { background: #d4b94e; }
+  .chip.active::before { background: #f6e0a4; box-shadow: 0 0 0 1.5px rgba(255,255,255,0.25); }
+  .chip.country::before { display: none; }
+  .chip.country { padding-left: 11px; }
+
+  .clear-btn {
+    margin-left: auto;
+    padding: 5px 12px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    font-family: inherit;
+    transition: all 0.15s ease;
+  }
+  .clear-btn:hover:not(:disabled) {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.32);
+    color: #fff;
+  }
+  .clear-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  /* ---------- Main layout ---------- */
+  main {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+  }
+
+  #map {
+    height: 100%;
+    background: #1a1d24;
+  }
+
+  .panel {
+    height: 100%;
+    background: #f4efe6;
+    color: #2a2a2a;
+    border-left: 1px solid rgba(0,0,0,0.08);
+    overflow-y: auto;
+    padding: 28px 32px 80px;
+    position: relative;
+    box-shadow: inset 8px 0 16px -8px rgba(0,0,0,0.18);
+  }
+
+  .panel h2 {
+    margin: 0 0 6px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #2a0e15;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+  }
+  .panel .subtitle {
+    font-size: 11px;
+    color: #6c645a;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+  .meta-item {
+    font-size: 11.5px;
+    padding: 4px 10px;
+    background: #e8e0d0;
+    border-radius: 999px;
+    color: #4a4a4a;
+    font-weight: 500;
+  }
+  .meta-item.cool { background: #eff6ff; color: #1d4ed8; }
+  .meta-item.moderate { background: #fff7ed; color: #c2410c; }
+  .meta-item.warm { background: #fef2f2; color: #b91c1c; }
+
+  .section {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid #e6dfd0;
+  }
+  .section:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+  .section h3 {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    color: #7a2733;
+    margin: 0 0 10px;
+    font-weight: 700;
+  }
+
+  .section p, .section li, .section > div { font-size: 14px; line-height: 1.55; }
+  .section .note {
+    font-size: 13px;
+    color: #6b6b6b;
+    margin-top: 8px;
+    font-style: italic;
+  }
+  .section ul { margin: 0; padding-left: 18px; }
+  .section ul li { margin-bottom: 4px; }
+
+  .region-list, .grape-list { padding: 0; list-style: none; margin: 0; }
+  .region-list li, .grape-list li {
+    padding: 12px 14px;
+    margin: 2px -14px;
+    border-radius: 10px;
+    transition: background 0.12s ease;
+  }
+  .region-list li { cursor: pointer; }
+  .region-list li:hover { background: #ebe2cf; }
+
+  .region-list .region-name, .grape-list .grape-name {
+    font-weight: 600;
+    color: #2a0e15;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .region-list .region-style, .grape-list .grape-style {
+    font-size: 13.5px;
+    color: #4a4a4a;
+    margin-top: 5px;
+    line-height: 1.55;
+  }
+  .region-list .region-meta {
+    font-size: 11px;
+    color: #6c645a;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  .empty {
+    text-align: center;
+    padding: 80px 20px 40px;
+    color: #6c645a;
+    font-size: 14px;
+  }
+  .empty .hint {
+    font-size: 12.5px;
+    color: #8b8273;
+    margin-top: 10px;
+  }
+
+  /* Leaflet override for cleaner look */
+  .leaflet-bar a {
+    background-color: rgba(255,255,255,0.95);
+    color: #2a2a2a;
+  }
+  .leaflet-tooltip {
+    background: rgba(42, 14, 21, 0.92);
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .leaflet-tooltip-top:before { border-top-color: rgba(42, 14, 21, 0.92); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; grid-template-rows: 50vh 1fr; }
+    .panel { border-left: none; border-top: 1px solid rgba(0,0,0,0.12); box-shadow: inset 0 8px 16px -8px rgba(0,0,0,0.18); }
+    body { overflow: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">
+    <span class="mark">WSET L2</span>
+    <span class="sep">·</span>
+    <span class="tag">Wine Map</span>
+  </div>
+  <button class="info-btn" id="info-btn" type="button" aria-label="About and legend">
+    <span class="icon">i</span>
+    <span>About</span>
+  </button>
+</header>
+
+<div class="popover-backdrop" id="popover-backdrop">
+  <div class="popover" role="dialog" aria-label="About">
+    <h3>How to use</h3>
+    <p>Tap a grape chip to highlight its regions, a country chip to filter the map, or a pin to see what grows there. Filters compose — pick a grape <em>and</em> a country to narrow further.</p>
+    <div class="climate-key">
+      <div class="key-label">Pin colour = climate</div>
+      <div class="climate-row"><span class="climate-dot" style="background:#2563eb"></span> Cool</div>
+      <div class="climate-row"><span class="climate-dot" style="background:#ea580c"></span> Moderate</div>
+      <div class="climate-row"><span class="climate-dot" style="background:#dc2626"></span> Warm</div>
+    </div>
+  </div>
+</div>
+
+<div class="filter-bar" id="grape-bar"></div>
+<div class="filter-bar" id="country-bar"></div>
+
+<main>
+  <div id="map"></div>
+  <aside class="panel" id="panel">
+    <div class="empty">
+      Pick a grape or a region to start exploring.
+      <div class="hint">Pin colour shows climate. Larger pins = principal grape sites.</div>
+    </div>
+  </aside>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+(async function () {
+  let grapes, regions, labelTerms;
+  try {
+    const noCache = { cache: 'no-store' };
+    [grapes, regions, labelTerms] = await Promise.all([
+      fetch('data/grapes.json', noCache).then(r => r.json()),
+      fetch('data/regions.json', noCache).then(r => r.json()),
+      fetch('data/labelTerms.json', noCache).then(r => r.json())
+    ]);
+  } catch (e) {
+    document.getElementById('panel').innerHTML =
+      '<div class="empty">Failed to load data files.<br><br>' +
+      'This page must be served over HTTP. From the project root run:<br><br>' +
+      '<code>python3 -m http.server 8080</code><br><br>' +
+      'then open <code>http://localhost:8080</code></div>';
+    return;
+  }
+
+  const grapeById = Object.fromEntries(grapes.map(g => [g.id, g]));
+  const regionById = Object.fromEntries(regions.map(r => [r.id, r]));
+  const labelById = Object.fromEntries(labelTerms.map(l => [l.id, l]));
+
+  const CLIMATE_COLORS = { cool: '#2563eb', moderate: '#ea580c', warm: '#dc2626' };
+
+  let selectedGrapeId = null;
+  let selectedCountry = null;
+  let selectedRegionId = null;
+
+  // ---- Map ----
+  const map = L.map('map', { worldCopyJump: true, zoomControl: true }).setView([25, 10], 2);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    maxZoom: 18,
+    subdomains: 'abcd'
+  }).addTo(map);
+
+  // About / legend popover
+  const infoBtn = document.getElementById('info-btn');
+  const popoverBackdrop = document.getElementById('popover-backdrop');
+  infoBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    popoverBackdrop.classList.toggle('open');
+  });
+  popoverBackdrop.addEventListener('click', (e) => {
+    if (e.target === popoverBackdrop) popoverBackdrop.classList.remove('open');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') popoverBackdrop.classList.remove('open');
+  });
+
+  // Markers
+  const markers = {};
+  for (const r of regions) {
+    if (!r.center || r.type === 'country') continue;
+    const marker = L.circleMarker([r.center[1], r.center[0]], {
+      radius: 6,
+      fillColor: CLIMATE_COLORS[r.climate] || '#999',
+      color: '#fff',
+      weight: 1.5,
+      fillOpacity: 0.88
+    });
+    marker.bindTooltip(r.name, { direction: 'top', offset: [0, -6] });
+    marker.on('click', () => selectRegion(r.id));
+    marker.addTo(map);
+    markers[r.id] = marker;
+  }
+
+  // ---- Grape chip bar (grouped by syllabus category) ----
+  const grapeBar = document.getElementById('grape-bar');
+  grapeBar.classList.add('grouped');
+
+  const CATEGORIES = [
+    { key: 'principal', label: 'Principal' },
+    { key: 'regional', label: 'Regional' },
+    { key: 'sparkling', label: 'Sparkling' },
+    { key: 'fortified', label: 'Fortified' }
+  ];
+  const sortedGrapes = [...grapes].sort((a, b) =>
+    +a.syllabus.chapter - +b.syllabus.chapter || a.name.localeCompare(b.name)
+  );
+  for (const cat of CATEGORIES) {
+    const inCat = sortedGrapes.filter(g => g.syllabus.category === cat.key);
+    if (inCat.length === 0) continue;
+    const group = document.createElement('div');
+    group.className = 'grape-group';
+    const lbl = document.createElement('span');
+    lbl.className = 'group-label';
+    lbl.textContent = cat.label;
+    group.appendChild(lbl);
+    const chipsWrap = document.createElement('div');
+    chipsWrap.className = 'chips';
+    for (const g of inCat) {
+      const chip = document.createElement('span');
+      chip.className = `chip ${g.kind}`;
+      chip.textContent = g.name;
+      chip.dataset.grapeId = g.id;
+      chip.onclick = () => selectGrape(g.id);
+      chipsWrap.appendChild(chip);
+    }
+    group.appendChild(chipsWrap);
+    grapeBar.appendChild(group);
+  }
+
+  // ---- Country chip bar ----
+  const countryBar = document.getElementById('country-bar');
+  const countryLabel = document.createElement('span');
+  countryLabel.className = 'label';
+  countryLabel.textContent = 'Countries';
+  countryBar.appendChild(countryLabel);
+
+  const COUNTRY_FLAGS = {
+    'France': '🇫🇷', 'Germany': '🇩🇪', 'Spain': '🇪🇸', 'Italy': '🇮🇹',
+    'USA': '🇺🇸', 'Chile': '🇨🇱', 'Argentina': '🇦🇷', 'South Africa': '🇿🇦',
+    'Australia': '🇦🇺', 'New Zealand': '🇳🇿', 'Portugal': '🇵🇹', 'Hungary': '🇭🇺'
+  };
+  const countriesInScope = [...new Set(regions.map(r => r.country))].sort();
+  const countryChipsWrap = document.createElement('div');
+  countryChipsWrap.className = 'chips';
+  for (const c of countriesInScope) {
+    const chip = document.createElement('span');
+    chip.className = 'chip country';
+    chip.textContent = `${COUNTRY_FLAGS[c] || ''} ${c}`.trim();
+    chip.dataset.country = c;
+    chip.onclick = () => selectCountry(c);
+    countryChipsWrap.appendChild(chip);
+  }
+  countryBar.appendChild(countryChipsWrap);
+  const clearBtn = document.createElement('button');
+  clearBtn.className = 'clear-btn';
+  clearBtn.textContent = 'Clear all';
+  clearBtn.onclick = clearSelection;
+  clearBtn.disabled = true;
+  countryBar.appendChild(clearBtn);
+
+  // ---- State ----
+  function selectGrape(id) {
+    if (selectedGrapeId === id) {
+      selectedGrapeId = null;
+    } else {
+      selectedGrapeId = id;
+    }
+    selectedRegionId = null;
+    afterFilterChange();
+  }
+
+  function selectCountry(name) {
+    if (selectedCountry === name) {
+      selectedCountry = null;
+    } else {
+      selectedCountry = name;
+    }
+    selectedRegionId = null;
+    afterFilterChange();
+  }
+
+  function afterFilterChange() {
+    updateChrome();
+    highlightRegions();
+    renderPanel();
+    fitToFilters();
+  }
+
+  function selectRegion(id) {
+    selectedRegionId = id;
+    updateChrome();
+    renderPanel();
+    const r = regionById[id];
+    if (r && r.center) {
+      map.setView([r.center[1], r.center[0]], Math.max(map.getZoom(), 6), { animate: true });
+    }
+  }
+
+  function clearSelection() {
+    selectedGrapeId = null;
+    selectedCountry = null;
+    selectedRegionId = null;
+    updateChrome();
+    highlightRegions();
+    renderPanel();
+    map.setView([25, 10], 2);
+  }
+
+  function updateChrome() {
+    document.querySelectorAll('.chip').forEach(c => {
+      if (c.dataset.grapeId) {
+        c.classList.toggle('active', c.dataset.grapeId === selectedGrapeId);
+      } else if (c.dataset.country) {
+        c.classList.toggle('active', c.dataset.country === selectedCountry);
+      }
+    });
+    clearBtn.disabled = !selectedGrapeId && !selectedCountry && !selectedRegionId;
+  }
+
+  function getFilteredRegionIds() {
+    const grape = grapeById[selectedGrapeId];
+    const grapeRegions = grape ? new Set(grape.regions) : null;
+    const filtered = new Set();
+    for (const r of regions) {
+      if (r.type === 'country') continue;
+      if (grapeRegions && !grapeRegions.has(r.id)) continue;
+      if (selectedCountry && r.country !== selectedCountry) continue;
+      filtered.add(r.id);
+    }
+    return filtered;
+  }
+
+  function highlightRegions() {
+    const filterActive = !!(selectedGrapeId || selectedCountry);
+    const filtered = filterActive ? getFilteredRegionIds() : null;
+    for (const [id, marker] of Object.entries(markers)) {
+      if (!filterActive) {
+        marker.setStyle({ fillOpacity: 0.88, weight: 1.5 });
+        marker.setRadius(6);
+      } else if (filtered.has(id)) {
+        marker.setStyle({ fillOpacity: 1, weight: 2 });
+        marker.setRadius(9);
+        marker.bringToFront();
+      } else {
+        marker.setStyle({ fillOpacity: 0.22, weight: 1 });
+        marker.setRadius(4);
+      }
+    }
+  }
+
+  function fitToFilters() {
+    if (!selectedGrapeId && !selectedCountry) return;
+    const points = [...getFilteredRegionIds()]
+      .map(id => regionById[id])
+      .filter(r => r && r.center)
+      .map(r => [r.center[1], r.center[0]]);
+    if (points.length === 0) return;
+    if (points.length === 1) {
+      map.setView(points[0], 6, { animate: true });
+      return;
+    }
+    const bounds = L.latLngBounds(points).pad(0.25);
+    const MIN_ZOOM = 3;
+    const naturalZoom = map.getBoundsZoom(bounds);
+    if (naturalZoom < MIN_ZOOM) {
+      map.setView(bounds.getCenter(), MIN_ZOOM, { animate: true });
+    } else {
+      map.fitBounds(bounds, { animate: true });
+    }
+  }
+
+  // ---- Panel rendering ----
+  function renderPanel() {
+    const panel = document.getElementById('panel');
+    if (selectedRegionId) {
+      panel.innerHTML = renderRegion(selectedRegionId);
+    } else if (selectedGrapeId) {
+      panel.innerHTML = renderGrape(selectedGrapeId);
+    } else if (selectedCountry) {
+      panel.innerHTML = renderCountry(selectedCountry);
+    } else {
+      panel.innerHTML = '<div class="empty">Pick a grape, a country, or a region to start exploring.<div class="hint">Pin colour shows climate. Larger pins = filtered/principal sites.</div></div>';
+    }
+    // wire any region links
+    panel.querySelectorAll('[data-region-id]').forEach(el => {
+      el.onclick = () => selectRegion(el.dataset.regionId);
+    });
+    panel.scrollTop = 0;
+  }
+
+  function renderGrape(id) {
+    const g = grapeById[id];
+    if (!g) return '<div class="empty">Unknown grape</div>';
+
+    const meta = [
+      `<span class="meta-item">${g.kind === 'black' ? 'Black grape' : 'White grape'}</span>`,
+      g.characteristics.acidity ? `<span class="meta-item">Acidity ${g.characteristics.acidity}</span>` : '',
+      g.characteristics.tannin ? `<span class="meta-item">Tannin ${g.characteristics.tannin}</span>` : '',
+      g.characteristics.body ? `<span class="meta-item">${g.characteristics.body}</span>` : '',
+      ...g.climate.map(c => `<span class="meta-item ${c}">${c}</span>`)
+    ].filter(Boolean).join(' ');
+
+    const aromas = g.primaryAromas.join(', ');
+    const aged = g.agedAromas ? g.agedAromas.join(', ') : null;
+
+    const filteredRegionIds = selectedCountry
+      ? g.regions.filter(rid => regionById[rid]?.country === selectedCountry)
+      : g.regions;
+    const regionList = filteredRegionIds.map(rid => {
+      const r = regionById[rid];
+      const note = g.styleByRegion?.[rid] || '';
+      const flag = countryFlag(r?.country);
+      return `<li data-region-id="${rid}">
+        <div class="region-name">${flag ? flag + ' ' : ''}${r ? r.name : rid}</div>
+        ${r?.country ? `<div class="region-meta">${r.country}${r.giClass ? ` · ${r.giClass}` : ''}</div>` : ''}
+        ${note ? `<div class="region-style">${note}</div>` : ''}
+      </li>`;
+    }).join('');
+    const filterNote = selectedCountry
+      ? `<div class="note" style="margin-bottom:6px;">Filtered to ${selectedCountry} (${filteredRegionIds.length} of ${g.regions.length} regions). Click a country chip again to clear.</div>`
+      : '';
+
+    const cat = g.syllabus.category[0].toUpperCase() + g.syllabus.category.slice(1);
+
+    return `
+      <h2>${g.name}${g.alternateName ? ` <span style="color:#8b8273;font-weight:400;">/ ${g.alternateName}</span>` : ''}</h2>
+      <div class="subtitle">Chapter ${g.syllabus.chapter} · Session ${g.syllabus.session} · ${cat} grape (LO${g.syllabus.learningOutcome})</div>
+      <div class="meta">${meta}</div>
+
+      <div class="section">
+        <h3>Primary aromas</h3>
+        <div>${aromas}</div>
+        ${g.primaryAromasNote ? `<div class="note">${g.primaryAromasNote}</div>` : ''}
+      </div>
+
+      ${g.ripenessLadder ? `<div class="section">
+        <h3>Ripeness progression</h3>
+        <div>${g.ripenessLadder.join(' → ')}</div>
+      </div>` : ''}
+
+      ${aged ? `<div class="section">
+        <h3>Tertiary / aged characters</h3>
+        <div>${aged}</div>
+        ${g.agingNote ? `<div class="note">${g.agingNote}</div>` : ''}
+      </div>` : ''}
+
+      ${g.winemaking ? `<div class="section">
+        <h3>Winemaking</h3>
+        <ul>${g.winemaking.map(w => `<li>${w}</li>`).join('')}</ul>
+      </div>` : ''}
+
+      ${g.blendingNotes ? `<div class="section">
+        <h3>Blending</h3>
+        <div>${g.blendingNotes}</div>
+      </div>` : ''}
+
+      <div class="section">
+        <h3>Regions in scope (${filteredRegionIds.length}${selectedCountry && filteredRegionIds.length !== g.regions.length ? ` of ${g.regions.length}` : ''})</h3>
+        ${filterNote}
+        <ul class="region-list">${regionList || '<li style="color:#6c645a;padding-left:0;">No regions for this grape in ' + selectedCountry + '.</li>'}</ul>
+      </div>
+    `;
+  }
+
+  function renderCountry(country) {
+    const countryRegions = regions.filter(r => r.country === country && r.type !== 'country');
+    const countryEntry = regions.find(r => r.country === country && r.type === 'country');
+
+    // grapes that have any region in this country
+    const linkedGrapes = grapes.filter(g =>
+      g.regions.some(rid => regionById[rid]?.country === country)
+    );
+
+    const principal = linkedGrapes.filter(g => g.syllabus.category === 'principal');
+    const regional = linkedGrapes.filter(g => g.syllabus.category === 'regional');
+
+    const grapeChip = g => {
+      const dot = g.kind === 'black' ? '#5d2330' : '#d4b94e';
+      return `<span class="meta-item" style="display:inline-flex;align-items:center;gap:6px;cursor:pointer;" onclick="event.stopPropagation();">
+        <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${dot};"></span>${g.name}
+      </span>`;
+    };
+
+    const regionList = countryRegions
+      .sort((a, b) => (a.parent ? 1 : 0) - (b.parent ? 1 : 0) || a.name.localeCompare(b.name))
+      .map(r => {
+        const parentName = r.parent ? (regionById[r.parent]?.name || '') : '';
+        return `<li data-region-id="${r.id}">
+          <div class="region-name">${r.name}</div>
+          <div class="region-meta">${parentName ? parentName + ' · ' : ''}${r.giClass || ''}${r.climate ? ' · ' + r.climate : ''}</div>
+          ${r.styleNotes ? `<div class="region-style">${r.styleNotes}</div>` : ''}
+        </li>`;
+      }).join('');
+
+    return `
+      <h2>${countryFlag(country)} ${country}</h2>
+      <div class="subtitle">${countryRegions.length} regions in scope · ${linkedGrapes.length} grapes</div>
+
+      ${principal.length ? `<div class="section">
+        <h3>Principal grapes here</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">${principal.map(grapeChip).join('')}</div>
+      </div>` : ''}
+
+      ${regional.length ? `<div class="section">
+        <h3>Regional grapes here</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">${regional.map(grapeChip).join('')}</div>
+      </div>` : ''}
+
+      <div class="section">
+        <h3>Regions (${countryRegions.length})</h3>
+        <ul class="region-list">${regionList}</ul>
+      </div>
+    `;
+  }
+
+  function renderRegion(id) {
+    const r = regionById[id];
+    if (!r) return '<div class="empty">Unknown region</div>';
+
+    const meta = [
+      r.giClass ? `<span class="meta-item">${r.giClass}</span>` : '',
+      r.climate ? `<span class="meta-item ${r.climate}">${r.climate}</span>` : '',
+      r.type ? `<span class="meta-item">${r.type}</span>` : ''
+    ].filter(Boolean).join(' ');
+
+    const trail = [];
+    let cur = r;
+    while (cur) {
+      trail.unshift(cur);
+      cur = cur.parent ? regionById[cur.parent] : null;
+    }
+    const trailStr = trail.slice(0, -1).map(b => b.name).join(' › ');
+
+    const linkedGrapes = grapes.filter(g => g.regions.includes(id));
+    const grapeList = linkedGrapes.map(g => {
+      const note = g.styleByRegion?.[id];
+      const cat = g.syllabus.category;
+      const dot = g.kind === 'black' ? '#5d2330' : '#d4b94e';
+      return `<li>
+        <div class="grape-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${dot};flex-shrink:0;"></span>${g.name}${g.alternateName ? ` / ${g.alternateName}` : ''} <span style="font-size:11px;color:#8b8273;font-weight:400;">(${cat})</span></div>
+        ${note ? `<div class="grape-style">${note}</div>` : ''}
+      </li>`;
+    }).join('');
+
+    return `
+      <h2>${countryFlag(r.country)} ${r.name}</h2>
+      <div class="subtitle">${trailStr || r.country}${r.giClass ? ` · ${r.giClass}` : ''}</div>
+      <div class="meta">${meta}</div>
+      ${r.styleNotes ? `<div class="section"><h3>About</h3><div>${r.styleNotes}</div></div>` : ''}
+      ${r.labelTerms?.length ? `<div class="section">
+        <h3>Label terms</h3>
+        <ul>${r.labelTerms.map(lid => {
+          const lt = labelById[lid];
+          return lt ? `<li><strong>${lt.name}</strong> — ${lt.meaning}</li>` : '';
+        }).join('')}</ul>
+      </div>` : ''}
+      <div class="section">
+        <h3>Grapes here (${linkedGrapes.length})</h3>
+        <ul class="grape-list">${grapeList || '<li style="color:#6c645a;">No L2-scope grapes seeded yet.</li>'}</ul>
+      </div>
+    `;
+  }
+
+  function countryFlag(country) {
+    return {
+      'France': '🇫🇷',
+      'Germany': '🇩🇪',
+      'Spain': '🇪🇸',
+      'Italy': '🇮🇹',
+      'Hungary': '🇭🇺',
+      'USA': '🇺🇸',
+      'Chile': '🇨🇱',
+      'Argentina': '🇦🇷',
+      'Portugal': '🇵🇹',
+      'South Africa': '🇿🇦',
+      'Australia': '🇦🇺',
+      'New Zealand': '🇳🇿'
+    }[country] || '';
+  }
+
+})();
+</script>
+</body>
+</html>

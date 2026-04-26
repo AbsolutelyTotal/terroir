@@ -1,0 +1,323 @@
+[
+  {
+    "id": "pgi",
+    "name": "PGI / IGP",
+    "scope": { "country": "EU" },
+    "meaning": "Protected Geographical Indication. EU classification with looser rules than PDO/AOC. In France, PGI = IGP (Indication Géographique Protégée), e.g. Pays d'Oc IGP.",
+    "examples": ["Pays d'Oc IGP", "Vin de Pays"]
+  },
+  {
+    "id": "bordeaux",
+    "name": "Bordeaux AOC",
+    "scope": { "region": "bordeaux" },
+    "meaning": "Region-wide Bordeaux appellation. Entry-level — a wine labelled 'Bordeaux AOC' may come from anywhere in the Bordeaux region.",
+    "examples": ["Bordeaux AOC red, white, rosé"]
+  },
+  {
+    "id": "bordeaux-superieur",
+    "name": "Bordeaux Supérieur",
+    "scope": { "region": "bordeaux" },
+    "meaning": "Step up from Bordeaux AOC. Slightly stricter rules (lower yields, higher minimum alcohol). Usually red.",
+    "examples": ["Bordeaux Supérieur AOC"]
+  },
+  {
+    "id": "cru-bourgeois",
+    "name": "Cru Bourgeois",
+    "scope": { "region": "haut-medoc" },
+    "meaning": "Classification for selected châteaux in the Médoc/Haut-Médoc, below Grand Cru Classé. Indicates a recognised level of quality.",
+    "examples": ["Haut-Médoc Cru Bourgeois"]
+  },
+  {
+    "id": "grand-cru-classe",
+    "name": "Grand Cru Classé",
+    "scope": { "region": "bordeaux" },
+    "meaning": "Top classification of Bordeaux châteaux (1855 Classification of the Médoc + Sauternes; separate classifications for Saint-Émilion and Graves). Used on the label of the classified château.",
+    "examples": ["Pauillac Grand Cru Classé", "Saint-Émilion Grand Cru Classé"]
+  },
+  {
+    "id": "premier-cru",
+    "name": "Premier Cru / 1er Cru",
+    "scope": { "region": "burgundy" },
+    "meaning": "Burgundy classification, second-highest after Grand Cru. Designates specific named vineyard sites (climats) within a village. Labels show the village name plus 'Premier Cru' (or '1er Cru'), often followed by the climat name.",
+    "examples": ["Gevrey-Chambertin Premier Cru Clos Saint-Jacques", "Chablis Premier Cru"]
+  },
+  {
+    "id": "grand-cru",
+    "name": "Grand Cru",
+    "scope": { "country": "France" },
+    "meaning": "Highest classification. In Burgundy, designates specific named vineyard sites which appear as their own AOC (e.g. Le Chambertin). In Alsace, designates 51 specific named vineyard sites. (Note: Bordeaux uses the separate term 'Grand Cru Classé'.)",
+    "examples": ["Le Chambertin Grand Cru", "Chablis Grand Cru", "Alsace Grand Cru"]
+  },
+
+  {
+    "id": "joven",
+    "name": "Joven",
+    "scope": { "country": "Spain" },
+    "meaning": "Spanish for 'young'. Wines with no minimum ageing requirement; usually unoaked, made for early drinking.",
+    "examples": ["Rioja Joven", "Vino Tinto Joven"]
+  },
+  {
+    "id": "crianza",
+    "name": "Crianza",
+    "scope": { "country": "Spain" },
+    "meaning": "Spanish ageing classification. For red Rioja: minimum 24 months total ageing including at least 12 months in oak.",
+    "examples": ["Rioja Crianza"]
+  },
+  {
+    "id": "reserva",
+    "name": "Reserva",
+    "scope": { "country": "Spain" },
+    "meaning": "Spanish ageing classification, above Crianza. For red Rioja: minimum 36 months total ageing including at least 12 months in oak.",
+    "examples": ["Rioja Reserva"]
+  },
+  {
+    "id": "gran-reserva",
+    "name": "Gran Reserva",
+    "scope": { "country": "Spain" },
+    "meaning": "Top Spanish ageing classification. For red Rioja: minimum 60 months total ageing including at least 24 months in oak and 36 in bottle.",
+    "examples": ["Rioja Gran Reserva"]
+  },
+
+  {
+    "id": "qualitatswein",
+    "name": "Qualitätswein",
+    "scope": { "country": "Germany" },
+    "meaning": "Mid-tier German PDO classification, below Prädikatswein. Wines must come from one of the 13 specified regions (Anbaugebiete) such as Mosel, Rheingau or Pfalz.",
+    "examples": ["Mosel Qualitätswein"]
+  },
+  {
+    "id": "pradikatswein",
+    "name": "Prädikatswein",
+    "scope": { "country": "Germany" },
+    "meaning": "Top tier of German PDO wines. Subdivided into six Prädikat categories defined by grape ripeness at harvest: Kabinett, Spätlese, Auslese, Beerenauslese, Trockenbeerenauslese, Eiswein.",
+    "examples": ["Mosel Riesling Spätlese"]
+  },
+  {
+    "id": "kabinett",
+    "name": "Kabinett",
+    "scope": { "country": "Germany" },
+    "meaning": "Lightest of the six German Prädikat categories. From regularly ripe grapes; can range from dry to off-dry. Often the lightest-bodied, lowest-alcohol style in a producer's range.",
+    "examples": ["Mosel Riesling Kabinett"]
+  },
+  {
+    "id": "spatlese",
+    "name": "Spätlese",
+    "scope": { "country": "Germany" },
+    "meaning": "Late-harvest Prädikat. Riper grapes than Kabinett; can be dry to sweet.",
+    "examples": ["Mosel Riesling Spätlese"]
+  },
+  {
+    "id": "auslese",
+    "name": "Auslese",
+    "scope": { "country": "Germany" },
+    "meaning": "Selected late-harvest Prädikat. From very ripe selected bunches, often partly affected by botrytis; can be dry to sweet but typically sweeter than Spätlese.",
+    "examples": ["Mosel Riesling Auslese"]
+  },
+  {
+    "id": "beerenauslese",
+    "name": "Beerenauslese (BA)",
+    "scope": { "country": "Germany" },
+    "meaning": "Sweet Prädikat made from individually selected botrytis-affected berries. Always sweet, concentrated.",
+    "examples": ["Mosel Riesling Beerenauslese"]
+  },
+  {
+    "id": "trockenbeerenauslese",
+    "name": "Trockenbeerenauslese (TBA)",
+    "scope": { "country": "Germany" },
+    "meaning": "Top sweet Prädikat. Made from dried, shrivelled, botrytis-affected berries. Very sweet and intensely concentrated.",
+    "examples": ["Mosel Riesling Trockenbeerenauslese"]
+  },
+  {
+    "id": "eiswein",
+    "name": "Eiswein",
+    "scope": { "country": "Germany" },
+    "meaning": "Sweet Prädikat made from grapes frozen on the vine and pressed while still frozen. Concentrates sugars by removing water as ice. (Healthy, non-botrytised grapes.)",
+    "examples": ["Mosel Riesling Eiswein"]
+  },
+  {
+    "id": "trocken",
+    "name": "Trocken",
+    "scope": { "country": "Germany" },
+    "meaning": "German for 'dry'. Indicates a dry wine. Can appear on Qualitätswein and Prädikatswein labels.",
+    "examples": ["Riesling Trocken"]
+  },
+  {
+    "id": "halbtrocken",
+    "name": "Halbtrocken",
+    "scope": { "country": "Germany" },
+    "meaning": "German for 'half-dry' (off-dry). Indicates a slightly sweeter wine than Trocken.",
+    "examples": ["Riesling Halbtrocken"]
+  },
+
+  {
+    "id": "classico",
+    "name": "Classico",
+    "scope": { "country": "Italy" },
+    "meaning": "Italian term for the historic, original ('classic') heart of a wine zone — typically the hilly central part. Usually higher-quality than the broader zone. Used in Chianti Classico, Soave Classico, Valpolicella Classico.",
+    "examples": ["Chianti Classico", "Soave Classico", "Valpolicella Classico"]
+  },
+  {
+    "id": "riserva",
+    "name": "Riserva",
+    "scope": { "country": "Italy" },
+    "meaning": "Italian term indicating extended ageing requirements set by each DOC/DOCG. For Chianti Classico Riserva, minimum 24 months ageing. Generally indicates higher quality than the basic version.",
+    "examples": ["Chianti Classico Riserva", "Brunello di Montalcino Riserva"]
+  },
+  {
+    "id": "amarone",
+    "name": "Amarone",
+    "scope": { "region": "valpolicella" },
+    "meaning": "Amarone della Valpolicella DOCG. Made from Corvina (and other local varieties) using the appassimento method — grapes are dried for several months before fermentation, concentrating sugars and flavours. Full-bodied, dry red with high alcohol; outstanding ageing potential.",
+    "examples": ["Amarone della Valpolicella DOCG"]
+  },
+  {
+    "id": "cape-blend",
+    "name": "Cape Blend",
+    "scope": { "country": "South Africa" },
+    "meaning": "South African label term for a red blend that contains a significant amount of Pinotage. Cape Blends typically combine Pinotage with international varieties such as Cabernet Sauvignon, Merlot or Shiraz.",
+    "examples": ["Stellenbosch Cape Blend"]
+  },
+  {
+    "id": "aszu",
+    "name": "Aszú",
+    "scope": { "region": "tokaj" },
+    "meaning": "Hungarian for botrytis-affected grapes. Tokaji Aszú is a sweet wine made from Furmint (and other local varieties) affected by botrytis/noble rot. Concentrated, sweet, with characteristic dried fruit, caramel and honey notes; outstanding ageing potential.",
+    "examples": ["Tokaji Aszú"]
+  },
+  {
+    "id": "recioto",
+    "name": "Recioto",
+    "scope": { "country": "Italy" },
+    "meaning": "Italian sweet wine made from grapes dried by the appassimento method. Fermentation is stopped before all the sugar is converted, leaving residual sweetness. Examples: Recioto della Valpolicella DOCG (sweet red from Corvina), Recioto di Soave (sweet white from Garganega).",
+    "examples": ["Recioto della Valpolicella DOCG", "Recioto di Soave"]
+  },
+
+  {
+    "id": "brut",
+    "name": "Brut",
+    "scope": {},
+    "meaning": "Sweetness level for sparkling wine — dry. Up to 12 g/L residual sugar. The most common sweetness for Champagne, Cava and Prosecco.",
+    "examples": ["Champagne Brut", "Cava Brut", "Prosecco Brut"]
+  },
+  {
+    "id": "demi-sec",
+    "name": "Demi-Sec",
+    "scope": {},
+    "meaning": "Sweetness level for sparkling wine — medium-sweet. 32–50 g/L residual sugar. Sweeter than Brut and Extra Dry.",
+    "examples": ["Champagne Demi-Sec"]
+  },
+  {
+    "id": "traditional-method",
+    "name": "Traditional Method",
+    "scope": {},
+    "meaning": "Method for making sparkling wine where the second fermentation takes place in the bottle in which the wine is sold. Used for Champagne, Cava, and Crémant. Develops fine mousse and biscuity/autolytic character with extended lees ageing.",
+    "examples": ["Champagne", "Cava", "Crémant"]
+  },
+  {
+    "id": "vintage-sparkling",
+    "name": "Vintage",
+    "scope": {},
+    "meaning": "Sparkling wine made from grapes of a single year, declared on the label. In Champagne, vintage wines are made only in the best years and have longer minimum lees ageing than non-vintage. Generally higher quality and price.",
+    "examples": ["Vintage Champagne"]
+  },
+  {
+    "id": "non-vintage",
+    "name": "Non-Vintage (NV)",
+    "scope": {},
+    "meaning": "Sparkling wine blended from base wines of multiple years to maintain a consistent house style. The majority of Champagne is non-vintage.",
+    "examples": ["Non-Vintage Champagne", "NV Champagne"]
+  },
+  {
+    "id": "methode-cap-classique",
+    "name": "Méthode Cap Classique (MCC)",
+    "scope": { "country": "South Africa" },
+    "meaning": "South African term for Traditional Method sparkling wine (second fermentation in bottle). Used because 'Champagne' and 'Méthode Champenoise' are protected.",
+    "examples": ["Western Cape MCC"]
+  },
+
+  {
+    "id": "fino",
+    "name": "Fino",
+    "scope": { "region": "sherry" },
+    "meaning": "Driest style of Sherry. Made from Palomino, fortified to ~15% abv (low enough for flor to develop). Aged biologically under flor — a film of yeast that protects the wine from oxidation and gives bread/dough/saline notes. Pale, dry, light-bodied. Manzanilla is a Fino made specifically in Sanlúcar de Barrameda.",
+    "examples": ["Jerez Fino", "Manzanilla"]
+  },
+  {
+    "id": "amontillado",
+    "name": "Amontillado",
+    "scope": { "region": "sherry" },
+    "meaning": "Style of Sherry that begins life as Fino (aged under flor) but is then refortified to ~17% abv, killing the flor and continuing to age oxidatively. Combines biological and oxidative ageing — amber, nutty, dry.",
+    "examples": ["Jerez Amontillado"]
+  },
+  {
+    "id": "oloroso",
+    "name": "Oloroso",
+    "scope": { "region": "sherry" },
+    "meaning": "Style of Sherry fortified to ~17% abv from the start, so flor never develops. Aged oxidatively only — deep brown, full-bodied, with dried-fruit and walnut notes. Naturally dry; sweetened versions are sold as Cream Sherry.",
+    "examples": ["Jerez Oloroso"]
+  },
+  {
+    "id": "pale-cream",
+    "name": "Pale Cream",
+    "scope": { "region": "sherry" },
+    "meaning": "Sweetened Fino — Fino Sherry with sweetening agents (rectified concentrated grape must) added. Pale colour, fresh, lightly sweet.",
+    "examples": ["Jerez Pale Cream"]
+  },
+  {
+    "id": "medium-sherry",
+    "name": "Medium",
+    "scope": { "region": "sherry" },
+    "meaning": "Sweetened Amontillado — Amontillado Sherry blended with sweet wine. Amber colour, medium-sweet, nutty.",
+    "examples": ["Jerez Medium"]
+  },
+  {
+    "id": "cream-sherry",
+    "name": "Cream",
+    "scope": { "region": "sherry" },
+    "meaning": "Sweetened Oloroso — Oloroso Sherry blended with sweet wine (often Pedro Ximénez). Deep brown, sweet, full-bodied.",
+    "examples": ["Jerez Cream"]
+  },
+  {
+    "id": "pedro-ximenez",
+    "name": "Pedro Ximénez (PX)",
+    "scope": { "region": "sherry" },
+    "meaning": "Both a grape variety and the name of a very sweet Sherry made from sun-dried Pedro Ximénez grapes. Intensely sweet, dark, with raisin, fig, treacle and coffee notes.",
+    "examples": ["Jerez Pedro Ximénez"]
+  },
+
+  {
+    "id": "ruby",
+    "name": "Ruby",
+    "scope": { "region": "douro" },
+    "meaning": "Entry-level style of Port. Aged briefly in large vessels to retain youthful, fruity character. Deep red, fruity, simple. Made for early drinking; no benefit from further bottle age.",
+    "examples": ["Ruby Port"]
+  },
+  {
+    "id": "reserve-ruby",
+    "name": "Reserve Ruby",
+    "scope": { "region": "douro" },
+    "meaning": "Premium Ruby Port — a blend of better-quality young wines. Fuller and richer than basic Ruby; still made for early drinking.",
+    "examples": ["Reserve Ruby Port"]
+  },
+  {
+    "id": "lbv",
+    "name": "Late Bottled Vintage (LBV)",
+    "scope": { "region": "douro" },
+    "meaning": "Port from a single (undeclared) vintage, aged 4–6 years in vessel before bottling. Fruitier and more accessible than Vintage Port; ready to drink on release.",
+    "examples": ["LBV Port"]
+  },
+  {
+    "id": "vintage-port",
+    "name": "Vintage Port",
+    "scope": { "region": "douro" },
+    "meaning": "Top tier of Port. Made only in declared vintages (the best years, ~3 in a decade). Aged just 2–3 years in vessel then bottled. Develops in bottle for decades, throwing a heavy sediment. Concentrated, full-bodied, with outstanding ageing potential.",
+    "examples": ["Vintage Port"]
+  },
+  {
+    "id": "tawny",
+    "name": "Tawny",
+    "scope": { "region": "douro" },
+    "meaning": "Oxidatively aged Port. Long ageing in small wooden vessels turns the wine tawny-brown and develops dried-fruit, nut, caramel and toffee notes. Sold with age indications: 10, 20, 30 or 40 Year Old (the average age of the blend). Ready to drink on release.",
+    "examples": ["10 Year Old Tawny Port", "20 Year Old Tawny Port"]
+  }
+]

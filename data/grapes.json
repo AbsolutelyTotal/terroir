@@ -1,0 +1,824 @@
+[
+  {
+    "id": "pinot-noir",
+    "name": "Pinot Noir",
+    "kind": "black",
+    "syllabus": { "chapter": "6", "session": 2, "learningOutcome": 3, "category": "principal" },
+    "characteristics": { "acidity": "high", "tannin": "low to medium", "body": "light- to medium-bodied", "sweetness": "dry", "skin": "thin" },
+    "climate": ["cool", "moderate"],
+    "primaryAromas": ["strawberry", "raspberry", "red cherry"],
+    "primaryAromasNote": "Red fruit profile: strawberry, raspberry, red cherry.",
+    "agedAromas": ["mushroom", "forest floor"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Typically single varietal", "Careful use of oak", "Used to make sparkling wines"],
+    "regions": ["burgundy","gevrey-chambertin","nuits-saint-georges","beaune","pommard","sonoma","carneros","santa-barbara-county","oregon","casablanca-valley","walker-bay","yarra-valley","mornington-peninsula","martinborough","marlborough","central-otago","champagne","cava"],
+    "styleByRegion": {
+      "burgundy": "Classic home of Pinot Noir. Cool to moderate climate gives high-acid, light- to medium-bodied wines with red fruit (strawberry, raspberry, red cherry); careful use of oak. Hierarchy of GIs: regional Bourgogne AOC, village wines (e.g. Gevrey-Chambertin), Premier Cru and Grand Cru top sites. Outstanding ageing potential at the top levels.",
+      "gevrey-chambertin": "Côte d'Or village in the Côte de Nuits (northern half). Premium Pinot Noir — fuller-bodied for Pinot, structured, developing earthy/forest-floor characters with age. Outstanding ageing potential. Site of multiple Grand Cru vineyards including Le Chambertin.",
+      "nuits-saint-georges": "Côte d'Or village in the Côte de Nuits. Premium Pinot Noir; structured, with red fruit and earthy/forest-floor characters with age.",
+      "beaune": "Côte d'Or village in the Côte de Beaune (southern half). Premium Pinot Noir; medium-bodied, fragrant, with red fruit.",
+      "pommard": "Côte d'Or village in the Côte de Beaune. Premium Pinot Noir; tends to be more structured and tannic than its Côte de Beaune neighbours.",
+      "sonoma": "California region cooler than Napa thanks to Pacific influence. Premium Pinot Noir from cool sub-areas; medium-bodied with red fruit and oak influence.",
+      "carneros": "Cool sub-AVA spanning the southern ends of Napa and Sonoma counties; cooled by San Pablo Bay fog. Premium Pinot Noir with high acidity and red fruit; widely used as base for sparkling wine.",
+      "santa-barbara-county": "Cool, Pacific-influenced county on California's central coast. Premium Pinot Noir with high acidity, red fruit, and judicious oak.",
+      "oregon": "Cool-climate Pacific Northwest state. The signature US region for premium Pinot Noir — high acidity, red fruit (strawberry, red cherry), elegant style with careful oak.",
+      "casablanca-valley": "Cool coastal Chilean valley near Santiago, Pacific fog-cooled. Premium Pinot Noir with high acidity and red fruit.",
+      "walker-bay": "Cool coastal South African region (Hemel-en-Aarde Valley). Atlantic-influenced; premium Pinot Noir with high acidity and red fruit.",
+      "yarra-valley": "Victoria. Cool to moderate climate. Premium Pinot Noir with high acidity and red fruit; oak ageing common.",
+      "mornington-peninsula": "Victoria, just south of Melbourne. Cool maritime climate. Premium Pinot Noir with high acidity and red fruit; elegant, fragrant style.",
+      "martinborough": "Wairarapa, North Island NZ. Cool to moderate climate. Premium Pinot Noir with high acidity and red fruit.",
+      "marlborough": "South Island NZ. Cool, sunny climate. Pinot Noir at high volume — medium-bodied with red fruit. Better known for Sauvignon Blanc.",
+      "central-otago": "South Island NZ — the world's southernmost wine region. Cool, dry continental climate (rare in NZ). Premium Pinot Noir of outstanding quality with concentrated red and dark cherry fruit."
+    }
+  },
+
+  {
+    "id": "zinfandel",
+    "name": "Zinfandel",
+    "alternateName": "Primitivo",
+    "kind": "black",
+    "syllabus": { "chapter": "7", "session": 0, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "medium",
+      "tannin": "high",
+      "body": "full-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["warm"],
+    "primaryAromas": ["strawberry", "raspberry", "plum", "black cherry"],
+    "primaryAromasNote": "Red fruit (strawberry, raspberry) and black fruit (plum, black cherry).",
+    "agedAromas": ["earth", "meat"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": [
+      "Often oaked (red)",
+      "Full-bodied",
+      "Red and rosé styles produced",
+      "White Zinfandel is a medium-sweet rosé style"
+    ],
+    "regions": ["california", "puglia"],
+    "styleByRegion": {
+      "california": "USA. Warm climate gives ripe, full-bodied red Zinfandel with high alcohol, intense black fruit, and oak-derived vanilla and coffee notes; can develop dried fruit/raisin and earth/meat with age. White Zinfandel is a medium-sweet rosé style — high volume.",
+      "puglia": "Southern Italy ('the heel'). Hot Mediterranean climate. Same grape as Zinfandel, locally called Primitivo. Soft, fruity, dry, full-bodied reds; often less alcoholic than California Zin."
+    }
+  },
+
+  {
+    "id": "riesling",
+    "name": "Riesling",
+    "kind": "white",
+    "syllabus": { "chapter": "8", "session": 5, "learningOutcome": 3, "category": "principal" },
+    "characteristics": { "acidity": "high", "body": "light- to full-bodied", "sweetness": "dry" },
+    "climate": ["cool", "moderate"],
+    "ripenessLadder": ["green apple", "lemon", "pear", "blossom", "apricot", "peach", "pineapple", "mango", "dried apricot"],
+    "primaryAromas": ["citrus", "stone fruit", "tropical fruit", "floral"],
+    "primaryAromasNote": "Aromatic variety. Fruit characteristics vary according to ripeness — cool climates show green apple, lemon and floral notes; warmer or riper styles give stone fruit, tropical fruit, and (when extra-ripe or botrytised) dried apricot. Susceptible to botrytis/noble rot.",
+    "agedAromas": ["honey", "petrol"],
+    "agingNote": "Very good or outstanding examples can age — develops honey and petrol (gasoline) characters with bottle age.",
+    "winemaking": ["Many harvest options", "Dry to sweet", "Light- to full-bodied", "Unoaked"],
+    "regions": ["alsace","mosel","rheingau","pfalz","clare-valley","eden-valley"],
+    "styleByRegion": {
+      "alsace": "Alsace, France. Bordering Germany; cool climate (rain shadow of the Vosges keeps it dry and sunny). Riesling here is typically dry, full-bodied, intensely aromatic with citrus, stone fruit and floral notes; high acidity. Top sites are designated Alsace Grand Cru.",
+      "mosel": "Northernmost German region; steep slopes above the Mosel river. Cool climate. Riesling here is typically light-bodied with low alcohol and high acidity, often off-dry to medium-sweet (Kabinett, Spätlese), with delicate green apple, lemon and floral character; outstanding ageing potential.",
+      "rheingau": "South-facing slopes along the Rhine. Slightly warmer than the Mosel. Premium Riesling — typically more body and ripeness than Mosel; often dry (Trocken) or off-dry, with citrus, stone fruit and honey character; outstanding ageing potential.",
+      "pfalz": "Warmer German region south of the Rheingau. Riesling here is fuller-bodied and riper, often dry, with stone fruit and tropical fruit notes.",
+      "clare-valley": "South Australia at high altitude. Cool nights despite warm days. Premium dry Riesling with high acidity, intense citrus (lime) and floral notes; ages outstandingly with petrol/honey development.",
+      "eden-valley": "South Australia, near the Barossa, at high altitude. Cool to moderate. Premium dry Riesling with high acidity and citrus/floral notes; ages outstandingly."
+    }
+  },
+
+  {
+    "id": "chenin-blanc",
+    "name": "Chenin Blanc",
+    "kind": "white",
+    "syllabus": { "chapter": "9", "session": 0, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "high",
+      "body": "medium-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["cool", "moderate", "warm"],
+    "ripenessLadder": ["green apple", "lemon", "peach", "pineapple", "mango"],
+    "primaryAromas": ["green fruit", "citrus", "stone fruit", "tropical fruit"],
+    "primaryAromasNote": "Just-ripe Chenin shows green fruit (apple) and citrus (lemon); extra-ripe gives stone fruit (peach) and tropical fruit (pineapple, mango). Susceptible to botrytis/noble rot, used to make sweet styles.",
+    "agedAromas": ["dried fruit", "honey", "nuts"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": [
+      "Many harvest options",
+      "Dry, off-dry, medium-sweet or sweet",
+      "Medium-bodied (dry/off-dry) to full-bodied (sweet)",
+      "Oaked or unoaked"
+    ],
+    "regions": ["vouvray", "western-cape"],
+    "styleByRegion": {
+      "vouvray": "Loire Valley AOC, central Loire. Cool climate. The reference for Loire Chenin Blanc — full range of styles from dry through off-dry and medium-sweet to sweet (botrytis-affected). Typically unoaked. High acidity and apple/lemon character; outstanding examples can age, developing honey notes.",
+      "western-cape": "South Africa's broad GI. South Africa is the largest Chenin Blanc producer in the world. Styles range from light, dry, fruit-forward whites to richer, oak-aged, complex examples (often from old vines)."
+    }
+  },
+
+  {
+    "id": "furmint",
+    "name": "Furmint",
+    "kind": "white",
+    "syllabus": { "chapter": "9", "session": 0, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "high",
+      "body": "medium-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["moderate"],
+    "primaryAromas": ["green fruit", "stone fruit"],
+    "primaryAromasNote": "Green fruit and stone fruit. Susceptible to botrytis/noble rot, used for sweet styles (Tokaji Aszú).",
+    "agedAromas": ["dried fruit", "caramel", "nuts"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": [
+      "Many harvest options",
+      "Dry, off-dry, medium-sweet or sweet",
+      "Oaked or unoaked"
+    ],
+    "regions": ["tokaj"],
+    "styleByRegion": {
+      "tokaj": "Hungary's signature wine region. Moderate climate; autumn mists encourage botrytis/noble rot. Range of styles from dry through off-dry and medium to sweet. The famous Tokaji Aszú is a sweet wine from botrytis-affected grapes — concentrated, sweet, with dried fruit, caramel and honey notes; outstanding ageing potential."
+    }
+  },
+
+  {
+    "id": "semillon",
+    "name": "Sémillon",
+    "alternateName": "Semillon",
+    "kind": "white",
+    "syllabus": { "chapter": "9", "session": 2, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "medium to high", "body": "light- to full-bodied", "sweetness": "dry" },
+    "climate": ["moderate", "warm"],
+    "primaryAromas": ["grass", "green apple", "lemon"],
+    "primaryAromasNote": "Youthful Sémillon shows grass, green apple and lemon. Susceptible to botrytis/noble rot, which produces concentrated, sweet wines. Many harvest options give styles ranging from dry to sweet.",
+    "agedAromas": ["honey", "marmalade", "dried fruit", "hazelnut"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Many harvest options", "Dry to sweet", "Light- to full-bodied", "Unoaked or oaked", "Sometimes blended (Sauvignon Blanc)"],
+    "blendingNotes": "Often blended with Sauvignon Blanc in Bordeaux for both dry whites and sweet Sauternes. Sémillon contributes body, weight and ageing capacity to the blend.",
+    "regions": ["bordeaux","sauternes","hunter-valley","barossa-valley"],
+    "styleByRegion": {
+      "bordeaux": "Used in Bordeaux's dry whites at the regional Bordeaux AOC level (and at premium level in Graves and Pessac-Léognan), blended with Sauvignon Blanc. Sémillon contributes body, weight and ageing capacity.",
+      "sauternes": "Top sweet wine appellation south of the city of Bordeaux. Sémillon-dominant blend with Sauvignon Blanc, from grapes affected by botrytis/noble rot — morning mists from the Ciron river meeting the warmer Garonne create the necessary conditions. Concentrated, sweet, full-bodied with honey, marmalade and dried-fruit notes; outstanding ageing potential.",
+      "hunter-valley": "New South Wales. Famous for distinctive long-lived dry Sémillon — picked early at low alcohol, unoaked, with high acidity and citrus/green apple in youth, developing toast, honey and hazelnut with extended bottle age.",
+      "barossa-valley": "South Australia. Sémillon here produces fuller-bodied, riper styles than Hunter; can be oaked."
+    }
+  },
+
+  {
+    "id": "chardonnay",
+    "name": "Chardonnay",
+    "kind": "white",
+    "syllabus": { "chapter": "10", "session": 3, "learningOutcome": 3, "category": "principal" },
+    "characteristics": { "acidity": "medium to high", "body": "light- to full-bodied", "sweetness": "dry" },
+    "climate": ["cool", "moderate", "warm"],
+    "ripenessLadder": ["green apple","lemon","peach","banana","pineapple"],
+    "primaryAromas": ["green fruit","citrus","stone fruit","tropical fruit"],
+    "primaryAromasNote": "Versatile across cool, moderate and warm climates. Cool climates give green apple and lemon; moderate climates give stone fruit (peach); warm climates give tropical fruit (banana, pineapple).",
+    "agedAromas": ["hazelnut","mushroom"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Range of winemaking techniques","Adjustments (sugar, acid)","Malolactic conversion — adds butter and cream","Lees contact — adds body and biscuit/bread notes","Oak (new vs old, level of toast, size of vessel)","Used to make sparkling wines"],
+    "regions": ["south-of-france-pgi","burgundy","chablis","puligny-montrachet","meursault","macon","pouilly-fuisse","california","sonoma","carneros","napa-valley","santa-barbara-county","oregon","central-valley-chile","casablanca-valley","western-cape","walker-bay","south-eastern-australia","yarra-valley","adelaide-hills","margaret-river","marlborough","hawkes-bay","champagne","cava"],
+    "styleByRegion": {
+      "south-of-france-pgi": "High-volume varietal Chardonnay from Pays d'Oc IGP. Warm climate gives ripe, fruit-forward styles with stone fruit and tropical fruit; oak commonly used at this level.",
+      "burgundy": "Classic home of Chardonnay. Cool to moderate climate; styles range from unoaked, citrus-driven Chablis (north) to richer, full-bodied, oak-aged whites of the Côte d'Or and Mâconnais (south).",
+      "chablis": "Northern, coolest part of Burgundy. Cool climate gives high acidity and green apple/lemon/citrus notes; typically unoaked or only lightly oaked. Premier Cru and Grand Cru classifications mark top sites.",
+      "puligny-montrachet": "Côte d'Or commune (Côte de Beaune). Premium full-bodied Chardonnay; oak ageing with malolactic conversion and lees contact gives butter, cream and biscuit notes alongside ripe stone fruit. Outstanding ageing potential.",
+      "meursault": "Côte d'Or commune (Côte de Beaune). Premium full-bodied Chardonnay; oak-aged with butter and cream from malolactic conversion and lees contact, plus stone fruit and hazelnut characters.",
+      "macon": "Mâconnais sub-region (southern Burgundy). Warmer than the Côte d'Or; ripe, fruity, medium-bodied Chardonnay, often unoaked or lightly oaked, at accessible prices.",
+      "pouilly-fuisse": "Top Mâconnais commune. Premium Chardonnay with more body and concentration than basic Mâcon; often oak-aged.",
+      "california": "State-wide California GI. Warm climate gives ripe, full-bodied, fruit-forward Chardonnay; oak ageing and malolactic conversion common, producing tropical fruit, vanilla and butter notes.",
+      "sonoma": "Cooler than Napa thanks to Pacific influence. Range of styles from cool-climate citrus and stone fruit to richer oak-aged styles.",
+      "carneros": "Cool sub-AVA spanning the southern ends of Napa and Sonoma, cooled by San Pablo Bay fog. Premium Chardonnay (and Pinot Noir) with high acidity and citrus/stone fruit; widely used for sparkling wine base too.",
+      "napa-valley": "Warm climate gives ripe, full-bodied, oak-aged Chardonnay with tropical fruit and vanilla; very good to outstanding examples.",
+      "santa-barbara-county": "Cool, Pacific-influenced county on California's central coast. Premium Chardonnay with high acidity and citrus/stone fruit; oak-aged styles common.",
+      "oregon": "Cool-climate Pacific Northwest state. Premium Chardonnay with high acidity and citrus/apple/stone fruit; some oak influence.",
+      "central-valley-chile": "Chile's largest production zone. Warm climate gives ripe, fruit-forward Chardonnay at high volume; good value.",
+      "casablanca-valley": "Cool coastal valley near Santiago, cooled by Pacific fogs. Premium Chardonnay with high acidity and citrus/stone fruit.",
+      "western-cape": "Broad GI covering most of South Africa's wine regions. Warm climate gives ripe, fruit-forward Chardonnay across the price spectrum; oak ageing common.",
+      "walker-bay": "Cool coastal South African region (Hemel-en-Aarde Valley). Atlantic-influenced; premium Chardonnay (and Pinot Noir) with high acidity and citrus/stone fruit.",
+      "south-eastern-australia": "Multi-state catch-all GI. Used for high-volume varietal Chardonnay blended from across regions; ripe, soft, oak-flavoured.",
+      "yarra-valley": "Victoria. Cool to moderate climate gives premium Chardonnay with high acidity and citrus/stone fruit; oak ageing common.",
+      "adelaide-hills": "South Australia. Cool to moderate climate at high altitude. Premium Chardonnay with high acidity and citrus/stone fruit; oak ageing common.",
+      "margaret-river": "Western Australia. Maritime climate gives premium Chardonnay with stone and tropical fruit; oak ageing and lees contact common.",
+      "marlborough": "South Island, NZ. Cool, sunny climate gives premium Chardonnay with high acidity and citrus/stone fruit; some oak ageing. Better known for Sauvignon Blanc.",
+      "hawkes-bay": "North Island, NZ — warmer than Marlborough. Premium Chardonnay with stone fruit and tropical fruit; oak ageing common."
+    }
+  },
+
+  {
+    "id": "sauvignon-blanc",
+    "name": "Sauvignon Blanc",
+    "kind": "white",
+    "syllabus": { "chapter": "11", "session": 3, "learningOutcome": 3, "category": "principal" },
+    "characteristics": { "acidity": "high", "body": "light- to medium-bodied", "sweetness": "dry" },
+    "climate": ["cool", "moderate"],
+    "ripenessLadder": ["asparagus","grass","green pepper","green apple","lemon","peach","passion fruit"],
+    "primaryAromas": ["herbaceous","green fruit","citrus","stone fruit","tropical fruit"],
+    "primaryAromasNote": "Aromatic variety with herbaceous notes (grass, asparagus, green pepper) plus fruit ranging from green and citrus (cooler) through stone fruit to tropical (warmer).",
+    "winemaking": ["Typically dry","Light- to medium-bodied","Typically unoaked","Typically single varietal (sometimes blended with Sémillon)","Typically for early drinking"],
+    "regions": ["south-of-france-pgi","loire","sancerre","pouilly-fume","touraine","bordeaux","graves","pessac-leognan","napa-valley","central-valley-chile","casablanca-valley","elgin","constantia","adelaide-hills","margaret-river","marlborough"],
+    "styleByRegion": {
+      "south-of-france-pgi": "High-volume varietal Sauvignon Blanc from Pays d'Oc IGP. Warm climate gives ripe, fruit-forward, soft styles for everyday drinking.",
+      "loire": "Cool to moderate northern French river valley. Sauvignon Blanc is the signature white grape of the eastern Loire (Sancerre, Pouilly-Fumé) and central Loire (Touraine).",
+      "sancerre": "Top Loire Sauvignon Blanc AOC, on the eastern bank of the Loire. Cool climate gives high acidity, citrus, stone fruit and herbaceous/grassy notes, sometimes with a flinty mineral character.",
+      "pouilly-fume": "Loire Sauvignon Blanc AOC opposite Sancerre on the western bank. Similar style to Sancerre, often noted for a smoky/flinty character (the 'fumé' in the name).",
+      "touraine": "Central Loire AOC. Lighter, more affordable Sauvignon Blanc with high acidity, citrus and herbaceous notes.",
+      "bordeaux": "Sauvignon Blanc is used in Bordeaux's dry whites at the regional Bordeaux AOC level, often blended with Sémillon.",
+      "graves": "Left Bank south of the city of Bordeaux. Sauvignon Blanc-Sémillon dry white blends; medium- to full-bodied, often oak-aged.",
+      "pessac-leognan": "Top sub-zone of Graves. Premium dry whites from Sauvignon Blanc and Sémillon, oak-aged with lees contact for complexity; outstanding examples can age.",
+      "napa-valley": "Warm climate gives ripe, fruit-forward Sauvignon Blanc with stone fruit and tropical notes; sometimes oak-aged in a 'Fumé Blanc' style.",
+      "central-valley-chile": "Warm climate gives ripe, fruit-forward Sauvignon Blanc at high volume; good value.",
+      "casablanca-valley": "Cool coastal Chilean valley, Pacific fog-cooled. Premium Sauvignon Blanc with high acidity and citrus, stone fruit and tropical notes — closer in style to Marlborough than to warm Central Valley.",
+      "elgin": "Cool South African region at high altitude in the Cape. Premium Sauvignon Blanc with high acidity and citrus/herbaceous character.",
+      "constantia": "Cool South African region near Cape Town, cooled by South Atlantic. Premium Sauvignon Blanc with citrus, herbaceous and tropical notes.",
+      "adelaide-hills": "South Australia at high altitude (cool to moderate). Premium Sauvignon Blanc with high acidity and citrus/stone fruit/tropical notes.",
+      "margaret-river": "Western Australia. Maritime climate. Sauvignon Blanc often blended with Sémillon (Bordeaux-style white blend).",
+      "marlborough": "South Island NZ. Cool, sunny climate. The benchmark New World Sauvignon Blanc — pungent and herbaceous (asparagus, grass, green pepper) with tropical notes (passion fruit) and high acidity. Typically unoaked, single varietal, for early drinking."
+    }
+  },
+
+  {
+    "id": "pinot-grigio",
+    "name": "Pinot Grigio",
+    "alternateName": "Pinot Gris",
+    "kind": "white",
+    "syllabus": { "chapter": "12", "session": 7, "learningOutcome": 3, "category": "principal" },
+    "characteristics": {
+      "acidity": "medium to high",
+      "body": "light- to full-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["cool", "moderate"],
+    "primaryAromas": ["pear", "lemon", "peach", "banana", "mango"],
+    "primaryAromasNote": "Two key styles produced. Light Italian style ('Pinot Grigio'): dry, medium to high acidity, light-bodied, simple — green fruit (pear) and citrus (lemon). Richer Alsatian style ('Pinot Gris'): dry, off-dry or medium, medium acidity, full-bodied, complex — stone fruit (peach) and tropical fruit (banana, mango).",
+    "agedAromas": ["honey", "ginger"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": [
+      "Two key styles produced",
+      "Typically unoaked",
+      "Italian style: dry, medium to high acidity, light-bodied, simple",
+      "Alsatian style: dry / off-dry / medium, medium acidity, full-bodied, complex"
+    ],
+    "regions": ["veneto", "delle-venezie", "friuli-venezia-giulia", "alsace"],
+    "styleByRegion": {
+      "veneto": "Italy IGT/IGP. High-volume Pinot Grigio in the Italian style — dry, light-bodied, simple, with fresh pear and lemon character; for early drinking.",
+      "delle-venezie": "Italian DOC covering Veneto, Friuli-Venezia Giulia and Trentino-Alto Adige. The largest premium origin for Italian-style Pinot Grigio — dry, light-bodied, simple to medium-complex, with green fruit and citrus.",
+      "friuli-venezia-giulia": "North-east Italy. Cooler than Veneto. Premium Pinot Grigio with more concentration and complexity than basic Italian-style Pinot Grigio.",
+      "alsace": "France. Cool climate, dry and sunny (rain shadow of the Vosges). 'Pinot Gris' here is full-bodied and complex — dry, off-dry or medium, with stone fruit and tropical fruit; can be made in concentrated late-harvest 'Vendanges Tardives' styles. Top sites are Alsace Grand Cru."
+    }
+  },
+
+  {
+    "id": "gewurztraminer",
+    "name": "Gewurztraminer",
+    "kind": "white",
+    "syllabus": { "chapter": "13", "session": 7, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "low to medium",
+      "body": "full-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["cool", "moderate"],
+    "primaryAromas": ["rose", "peach", "apricot", "lychee"],
+    "primaryAromasNote": "Aromatic variety. Floral (rose), stone fruit (peach, apricot) and tropical fruit (lychee). Distinctive perfumed character.",
+    "agedAromas": ["honey", "dried fruit"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": [
+      "Aromatic variety",
+      "Typically unoaked",
+      "Full-bodied",
+      "Dry to sweet (range of styles)"
+    ],
+    "regions": ["alsace"],
+    "styleByRegion": {
+      "alsace": "France's Alsace AOC. Cool to moderate climate. Aromatic, full-bodied wine with classic rose, lychee and stone-fruit character; low acidity. Range of styles from dry to richly sweet (e.g. late-harvest Vendanges Tardives). Top sites are designated Alsace Grand Cru."
+    }
+  },
+
+  {
+    "id": "viognier",
+    "name": "Viognier",
+    "kind": "white",
+    "syllabus": { "chapter": "13", "session": 7, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "low to medium",
+      "body": "medium- to full-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["moderate"],
+    "primaryAromas": ["blossom", "peach", "apricot"],
+    "primaryAromasNote": "Floral (blossom) and stone fruit (peach, apricot). Aromatic.",
+    "winemaking": [
+      "Typically dry",
+      "Medium- to full-bodied",
+      "Oaked or unoaked",
+      "Single varietal or blended"
+    ],
+    "blendingNotes": "In Côte Rôtie (Northern Rhône), small amounts of Viognier are sometimes co-fermented with Syrah to add aromatic complexity and a perfumed character.",
+    "regions": ["condrieu"],
+    "styleByRegion": {
+      "condrieu": "Northern Rhône AOC just south of Côte Rôtie — the reference for varietal Viognier. Dry, medium- to full-bodied with floral (blossom) and stone-fruit (peach, apricot) character; oaked or unoaked styles."
+    }
+  },
+
+  {
+    "id": "albarino",
+    "name": "Albariño",
+    "kind": "white",
+    "syllabus": { "chapter": "13", "session": 7, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "high",
+      "body": "medium-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["moderate"],
+    "primaryAromas": ["lemon", "grapefruit", "peach", "apricot"],
+    "primaryAromasNote": "Citrus fruit (lemon, grapefruit) and stone fruit (peach, apricot).",
+    "winemaking": [
+      "Typically dry",
+      "Medium-bodied",
+      "Oaked or unoaked",
+      "Single varietal",
+      "Typically for early drinking"
+    ],
+    "regions": ["rias-baixas"],
+    "styleByRegion": {
+      "rias-baixas": "Galicia, north-west Spain on the Atlantic coast. Maritime moderate climate. The reference region for Albariño — dry, medium-bodied, with high acidity, citrus and stone fruit; typically unoaked, single varietal, for early drinking."
+    }
+  },
+
+  {
+    "id": "merlot",
+    "name": "Merlot",
+    "kind": "black",
+    "syllabus": { "chapter": "14", "session": 4, "learningOutcome": 3, "category": "principal" },
+    "characteristics": { "acidity": "medium", "tannin": "medium", "body": "light- to full-bodied", "sweetness": "dry" },
+    "climate": ["moderate", "warm"],
+    "ripenessLadder": ["green pepper","strawberry","red cherry","plum","blackberry"],
+    "primaryAromas": ["red fruit","black fruit"],
+    "primaryAromasNote": "Fruit characteristics vary according to ripeness — less-ripe Merlot shows red fruit (strawberry, red cherry); riper Merlot shows black fruit (plum, blackberry).",
+    "agedAromas": ["dried fruit","tobacco"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Single varietal or blended","Simple or complex","Light- to full-bodied","Oaked or unoaked"],
+    "blendingNotes": "Often blended with high-tannin varieties such as Cabernet Sauvignon — to lower tannin and acidity levels, to make wines ready to drink at an earlier age, and to add red-fruit flavours to blends.",
+    "regions": ["south-of-france-pgi","bordeaux","saint-emilion","pomerol","california","napa-valley","sonoma","central-valley-chile","stellenbosch","margaret-river","hawkes-bay"],
+    "styleByRegion": {
+      "south-of-france-pgi": "High-volume varietal Merlot from Pays d'Oc IGP. Warm climate gives ripe, fruit-forward, soft, simple wines for everyday drinking.",
+      "bordeaux": "Used at the regional Bordeaux AOC level for entry-level reds, typically blended with Cabernet Sauvignon. Soft, fruit-forward and ready to drink earlier than wines from the named appellations.",
+      "saint-emilion": "Right Bank Bordeaux. Merlot-dominant blends (typically with Cabernet Franc and a smaller amount of Cabernet Sauvignon). Medium- to full-bodied, plump and rounded with red and black fruit; very good to outstanding examples can age. Saint-Émilion has its own Grand Cru Classé classification.",
+      "pomerol": "Right Bank Bordeaux. Predominantly Merlot, with small amounts of Cabernet Franc. Concentrated, plush and full-bodied with intense plum and blackberry fruit; outstanding ageing potential.",
+      "california": "State-wide California GI. Warm climate produces ripe, soft, fruit-forward Merlot; oak maturation common. Available at all price points.",
+      "napa-valley": "Premium Merlot region. Full-bodied, ripe and concentrated; often blended Bordeaux-style with Cabernet Sauvignon. Very good to outstanding quality.",
+      "sonoma": "Cooler than Napa due to Pacific influence. Merlot here is medium- to full-bodied with fresher acidity than Napa.",
+      "central-valley-chile": "Chile's largest production zone. Reliable warmth gives ripe, soft, fruit-forward Merlot at high volume; good value.",
+      "stellenbosch": "South Africa's top red wine region. Warm climate produces ripe, full-bodied Merlot, often blended Bordeaux-style with Cabernet Sauvignon.",
+      "margaret-river": "Western Australia. Maritime climate gives structured Merlot; commonly blended with Cabernet Sauvignon in a Bordeaux style.",
+      "hawkes-bay": "New Zealand's warmest red wine region (North Island). Cool to moderate by world standards, so leaner and more herbaceous; usually Bordeaux-blended with Cabernet Sauvignon."
+    }
+  },
+
+  {
+    "id": "cabernet-sauvignon",
+    "name": "Cabernet Sauvignon",
+    "kind": "black",
+    "syllabus": { "chapter": "15", "session": 4, "learningOutcome": 3, "category": "principal" },
+    "characteristics": { "acidity": "high", "tannin": "high", "body": "medium- to full-bodied", "sweetness": "dry", "skin": "thick" },
+    "climate": ["moderate", "warm"],
+    "ripenessLadder": ["green pepper","mint","blackcurrant","black cherry"],
+    "primaryAromas": ["black fruit","herbaceous"],
+    "agedAromas": ["dried fruit","earth","forest floor"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Single varietal or blended","Simple or complex","Medium- to full-bodied","Oak maturation is common"],
+    "blendingNotes": "Often blended with varieties with lower tannin and acidity levels such as Merlot — to balance a wine's acidity if it is too low, and to add tannin to wine for a particular style.",
+    "regions": ["south-of-france-pgi","bordeaux","medoc","haut-medoc","pauillac","margaux","graves","pessac-leognan","california","napa-valley","oakville","rutherford","calistoga","sonoma","central-valley-chile","maipo-valley","colchagua-valley","stellenbosch","coonawarra","margaret-river","hawkes-bay"],
+    "styleByRegion": {
+      "south-of-france-pgi": "High-volume Pays d'Oc IGP Cabernet. Warm climate gives ripe, fruit-forward, simple, fruity styles for everyday drinking; usually unoaked or lightly oaked.",
+      "bordeaux": "Used at the regional Bordeaux AOC level for entry-level reds, typically blended with Merlot. Lighter and earlier-drinking than the named appellations.",
+      "medoc": "Left Bank, northern Médoc peninsula. Cabernet-dominant Bordeaux blends; good quality, generally a step below Haut-Médoc and the named communes.",
+      "haut-medoc": "Better-quality Left Bank zone south of the Médoc AOC. Cabernet Sauvignon-dominant Bordeaux blends; home to many Cru Bourgeois and Grand Cru Classé châteaux.",
+      "pauillac": "Top Haut-Médoc commune. Full-bodied, high-tannin, high-acid Cabernet-dominant blends with intense blackcurrant fruit; oak ageing adds vanilla, cedar and toast. Outstanding quality and great ageing potential. Many Grand Cru Classé châteaux.",
+      "margaux": "Top Haut-Médoc commune. Cabernet-dominant Bordeaux blends, full-bodied and structured with capacity for ageing. Many Grand Cru Classé châteaux.",
+      "graves": "Left Bank south of the city of Bordeaux. Cabernet/Merlot blends on gravelly soils; full-bodied with structured tannins.",
+      "pessac-leognan": "Top sub-zone of Graves. Premium Cabernet/Merlot blends with structured tannins and ageing potential; the only Bordeaux zone making both prestigious reds and dry whites.",
+      "california": "State-wide California GI. Warm climate produces ripe, fruit-forward, full-bodied Cabernet; oak maturation common.",
+      "napa-valley": "California's flagship Cabernet region. Ripe, full-bodied, with intense blackcurrant fruit; oak ageing adds vanilla and toast. Very good to outstanding quality. Sub-AVAs Oakville, Rutherford and Calistoga are particularly prized.",
+      "oakville": "Premium sub-AVA of Napa Valley. Concentrated, full-bodied Cabernet Sauvignon of outstanding quality.",
+      "rutherford": "Premium sub-AVA of Napa Valley. Concentrated, full-bodied Cabernet Sauvignon of outstanding quality.",
+      "calistoga": "Northernmost, warmest sub-AVA of Napa Valley. Ripe, concentrated, full-bodied Cabernet Sauvignon.",
+      "sonoma": "Cooler than Napa due to Pacific influence. Cabernet here is medium- to full-bodied with fresher acidity than Napa; oak ageing common.",
+      "central-valley-chile": "Chile's largest production zone. Reliable warmth and dry summers give ripe, fruit-forward, medium- to full-bodied Cabernet at high volume.",
+      "maipo-valley": "Chile's most prestigious Cabernet zone, just south of Santiago. Full-bodied with ripe blackcurrant fruit and herbaceous notes; very good to outstanding examples.",
+      "colchagua-valley": "Premium Cabernet zone within the Rapel sector of the Central Valley. Warm, full-bodied, ripe and concentrated.",
+      "stellenbosch": "South Africa's top Cabernet region. Warm climate produces ripe, full-bodied wines, often blended Bordeaux-style with Merlot.",
+      "coonawarra": "South Australia. Distinctive 'terra rossa' soil over limestone. Cabernet here is medium- to full-bodied with characteristic mint/eucalyptus notes alongside blackcurrant.",
+      "margaret-river": "Western Australia. Maritime climate gives structured, balanced Cabernet, often blended with Merlot in a Bordeaux style; a hallmark New World region for premium Cab.",
+      "hawkes-bay": "New Zealand's warmest red wine region (North Island). Cooler than Australia, so styles are leaner and more herbaceous; usually Bordeaux-blended with Merlot."
+    }
+  },
+
+  {
+    "id": "syrah",
+    "name": "Syrah",
+    "alternateName": "Shiraz",
+    "kind": "black",
+    "syllabus": { "chapter": "16", "session": 4, "learningOutcome": 3, "category": "principal" },
+    "characteristics": { "acidity": "medium to high", "tannin": "medium to high", "body": "medium- to full-bodied", "sweetness": "dry", "skin": "thick" },
+    "climate": ["moderate", "warm"],
+    "ripenessLadder": ["peppercorn","blackberry","black cherry","liquorice"],
+    "primaryAromas": ["black fruit","spice"],
+    "agedAromas": ["dried fruit","leather","meat","earth"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Single varietal or blended","Medium- to full-bodied","Oak maturation is common"],
+    "blendingNotes": "In Côte Rôtie (Northern Rhône), Syrah may be co-fermented with a small amount of Viognier to add aromatic complexity. In Australia, Shiraz is sometimes blended with Cabernet Sauvignon or Grenache.",
+    "regions": ["south-of-france-pgi","northern-rhone","crozes-hermitage","hermitage","cote-rotie","south-eastern-australia","barossa-valley","hunter-valley"],
+    "styleByRegion": {
+      "south-of-france-pgi": "High-volume Pays d'Oc IGP Syrah. Warm climate gives ripe, fruit-forward, peppery, medium- to full-bodied wines for everyday drinking.",
+      "northern-rhone": "Northern part of the Rhône Valley. Syrah is the only black grape used in red AOC wines. Moderate climate gives medium- to full-bodied Syrah with black fruit and pepper; oak maturation common.",
+      "crozes-hermitage": "Largest Northern Rhône AOC, surrounding the Hermitage hill. Medium- to full-bodied Syrah with black fruit and pepper; good quality and accessibly priced.",
+      "hermitage": "Tiny, prestigious AOC on a steep hill above Tain l'Hermitage. Concentrated, full-bodied Syrah of outstanding quality with great ageing potential. Intense black fruit and spice, developing tertiary leather, meat and earth notes with age.",
+      "cote-rotie": "Northernmost Northern Rhône AOC ('roasted slope'). Steep south-facing terraced vineyards. Syrah may be co-fermented with a small amount of Viognier, giving an aromatic, perfumed style. Concentrated, structured, outstanding ageing potential.",
+      "south-eastern-australia": "Multi-state catch-all GI covering Victoria, NSW, Tasmania and parts of South Australia and Queensland. Used for high-volume varietal Shiraz blended from across regions; ripe, soft, fruit-forward.",
+      "barossa-valley": "South Australia. The icon for warm-climate Shiraz. Full-bodied, ripe, with intense black fruit and vanilla and toast from oak; high alcohol; outstanding examples can age.",
+      "hunter-valley": "New South Wales. Warm but humid and often cloudy, which moderates ripeness. Distinctive medium-bodied Shiraz with a characteristic earthy, leathery character. Also famous for long-lived dry Sémillon."
+    }
+  },
+
+  {
+    "id": "gamay",
+    "name": "Gamay",
+    "kind": "black",
+    "syllabus": { "chapter": "17", "session": 0, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "high",
+      "tannin": "low",
+      "body": "light-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["moderate"],
+    "primaryAromas": ["raspberry", "red cherry", "red plum"],
+    "primaryAromasNote": "Red fruit (raspberry, red cherry, red plum). Carbonic maceration is widely used in Beaujolais, adding distinctive banana and candy aromas.",
+    "winemaking": [
+      "Typically unoaked",
+      "Light-bodied",
+      "Carbonic maceration commonly used (adds banana and candy aromas)",
+      "Typically for early drinking"
+    ],
+    "regions": ["beaujolais", "beaujolais-villages", "fleurie"],
+    "styleByRegion": {
+      "beaujolais": "Granite-soiled region just south of Burgundy. Light-bodied, high-acid, low-tannin Gamay; carbonic maceration is widely used, adding banana and candy notes. Three-tier hierarchy: Beaujolais AOC, Beaujolais Villages AOC, ten named Crus.",
+      "beaujolais-villages": "Mid-tier Beaujolais AOC from a defined group of villages in the northern half of the region. More structured and concentrated than basic Beaujolais.",
+      "fleurie": "One of the ten Beaujolais Crus (top tier). Elegant, perfumed Gamay; medium-bodied with red fruit and floral character."
+    }
+  },
+
+  {
+    "id": "grenache",
+    "name": "Grenache",
+    "alternateName": "Garnacha",
+    "kind": "black",
+    "syllabus": { "chapter": "18", "session": 5, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "low", "tannin": "low to medium", "body": "medium- to full-bodied", "sweetness": "dry", "skin": "thin" },
+    "climate": ["warm"],
+    "primaryAromas": ["strawberry","red plum","red cherry","white pepper","liquorice"],
+    "primaryAromasNote": "Red fruit (strawberry, red plum, red cherry) and spice (white pepper, liquorice). High sugar levels give high alcohol.",
+    "agedAromas": ["earth","meat","dried fruit"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Often blended","Oaked or unoaked","Red or rosé wines"],
+    "blendingNotes": "Commonly blended with Syrah and Mourvèdre in the Southern Rhône (and as 'GSM' in Australia), and with Carignan/Cariñena in Spain (especially Priorat). Used for both red and rosé.",
+    "regions": ["southern-rhone","cotes-du-rhone","cotes-du-rhone-villages","chateauneuf-du-pape","minervois","rioja","navarra","priorat","barossa-valley","mclaren-vale"],
+    "styleByRegion": {
+      "southern-rhone": "Southern part of the Rhône Valley. Warm climate. Grenache is the dominant black grape, typically blended with Syrah and Mourvèdre.",
+      "cotes-du-rhone": "Largest Rhône AOC. Grenache-based blends; medium- to full-bodied, ripe red fruit and white pepper; usually unoaked or lightly oaked. Accessibly priced.",
+      "cotes-du-rhone-villages": "Higher-quality tier above Côtes du Rhône AOC, from a defined group of villages. More concentrated Grenache-based blends than basic Côtes du Rhône.",
+      "chateauneuf-du-pape": "Top Southern Rhône AOC. Famous for galets (large round stones) in the vineyards. Grenache-dominant blends with up to 13 permitted varieties; full-bodied, ripe, complex with red fruit, spice and earthy character; outstanding ageing potential.",
+      "minervois": "Languedoc-Roussillon AOC. Warm Mediterranean climate. Grenache-based blends, similar in style to the Southern Rhône but typically simpler and more affordable.",
+      "rioja": "Spain's most famous wine region. Garnacha is blended with Tempranillo to add body, ripe red fruit and softness.",
+      "navarra": "Spanish region adjacent to Rioja. Garnacha is widely planted; used for rosé (rosado) and as a blending component.",
+      "priorat": "Mountainous Catalan DOCa. Distinctive slate soils ('llicorella'). Old-vine Garnacha (often blended with Cariñena) producing concentrated, full-bodied, age-worthy reds of outstanding quality.",
+      "barossa-valley": "South Australia. Old-vine Grenache produces concentrated, full-bodied wines with ripe red fruit and white pepper; often blended with Shiraz and Mourvèdre (GSM).",
+      "mclaren-vale": "South Australia. Warm Mediterranean climate. Old-vine Grenache gives ripe, full-bodied wines with red fruit and white pepper; commonly blended GSM."
+    }
+  },
+
+  {
+    "id": "carmenere",
+    "name": "Carmenère",
+    "kind": "black",
+    "syllabus": { "chapter": "20", "session": 0, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "medium",
+      "tannin": "high",
+      "body": "full-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["warm"],
+    "primaryAromas": ["green pepper", "eucalyptus", "blackberry"],
+    "primaryAromasNote": "Herbaceous (green pepper), herbal (eucalyptus) and black fruit (blackberry).",
+    "agedAromas": ["leather", "earth"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": [
+      "Often oaked",
+      "Full-bodied",
+      "Blended or single varietal"
+    ],
+    "regions": ["central-valley-chile"],
+    "styleByRegion": {
+      "central-valley-chile": "Chile's largest production zone. Carmenère is Chile's signature black grape — full-bodied, ripe blackberry with characteristic herbaceous (green pepper) and herbal (eucalyptus) notes; often oak-aged. Long mistaken for Merlot before being identified as a distinct variety in the 1990s."
+    }
+  },
+
+  {
+    "id": "malbec",
+    "name": "Malbec",
+    "kind": "black",
+    "syllabus": { "chapter": "20", "session": 0, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "high",
+      "tannin": "high",
+      "body": "full-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["warm"],
+    "primaryAromas": ["blackberry", "black plum"],
+    "primaryAromasNote": "Black fruit (blackberry, black plum).",
+    "agedAromas": ["dried fruit", "meat"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": [
+      "Often oaked",
+      "Full-bodied",
+      "Single varietal or blended"
+    ],
+    "regions": ["mendoza"],
+    "styleByRegion": {
+      "mendoza": "Argentina's flagship region, in the rain shadow of the Andes. High-altitude, warm, dry. Full-bodied Malbec with intense ripe blackberry and black plum, high tannin, often oak-aged."
+    }
+  },
+
+  {
+    "id": "pinotage",
+    "name": "Pinotage",
+    "kind": "black",
+    "syllabus": { "chapter": "20", "session": 0, "learningOutcome": 4, "category": "regional" },
+    "characteristics": {
+      "acidity": "high",
+      "tannin": "medium",
+      "body": "full-bodied",
+      "sweetness": "dry"
+    },
+    "climate": ["warm"],
+    "primaryAromas": ["strawberry", "raspberry", "red cherry"],
+    "primaryAromasNote": "Red fruit (strawberry, raspberry, red cherry).",
+    "agedAromas": ["coffee", "chocolate", "smoke"],
+    "agingNote": "Takes on strong flavours from oak (coffee, chocolate, smoke); can age",
+    "winemaking": [
+      "Often oaked",
+      "Full-bodied",
+      "Used in 'Cape Blend' wines (with international varieties)"
+    ],
+    "regions": ["western-cape"],
+    "styleByRegion": {
+      "western-cape": "South Africa's distinctive grape — a cross of Pinot Noir × Cinsaut bred in 1925. Full-bodied with red fruit; takes on strong oak-derived coffee, chocolate and smoke flavours when matured. Used in 'Cape Blend' wines together with international varieties (e.g. Cabernet Sauvignon, Merlot, Shiraz)."
+    }
+  },
+
+  {
+    "id": "tempranillo",
+    "name": "Tempranillo",
+    "kind": "black",
+    "syllabus": { "chapter": "19", "session": 5, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "medium", "tannin": "medium", "body": "medium- to full-bodied", "sweetness": "dry" },
+    "climate": ["moderate", "warm"],
+    "primaryAromas": ["strawberry","red cherry","blackberry","black plum"],
+    "primaryAromasNote": "Red fruit (strawberry, red cherry) and black fruit (blackberry, black plum).",
+    "agedAromas": ["dried fruit","leather","mushroom"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Simple or complex","Medium- to full-bodied","Oaked or unoaked","Blended or single varietal"],
+    "blendingNotes": "In Rioja, traditionally blended with Garnacha (for body) and small amounts of Mazuelo and Graciano. In Catalunya, often blended with international varieties (Cabernet Sauvignon, Merlot).",
+    "regions": ["rioja","ribera-del-duero","catalunya"],
+    "styleByRegion": {
+      "rioja": "Spain's most famous wine region. Tempranillo-dominant, blended with Garnacha. Strict Spanish ageing classifications (Joven, Crianza, Reserva, Gran Reserva) on the label indicate increasing oak and bottle ageing — older wines develop characteristic dried fruit, leather and mushroom notes.",
+      "ribera-del-duero": "High-altitude Spanish region on the Duero river. Tempranillo (locally called Tinto Fino or Tinta del País). Cool nights despite warm days; concentrated, full-bodied, structured wines with significant ageing potential.",
+      "catalunya": "Broad Spanish DO covering all of Catalonia (Priorat is a separate, prestigious DOCa within). Tempranillo here is typically blended with international varieties (Cabernet Sauvignon, Merlot)."
+    }
+  },
+
+  {
+    "id": "cortese",
+    "name": "Cortese",
+    "kind": "white",
+    "syllabus": { "chapter": "21", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "high", "body": "light-bodied", "sweetness": "dry" },
+    "climate": ["moderate"],
+    "primaryAromas": ["blossom", "apple", "pear", "lemon"],
+    "primaryAromasNote": "Floral (blossom), green fruit (apple, pear) and citrus (lemon).",
+    "winemaking": ["Dry", "Light-bodied", "Unoaked", "Typically for early drinking"],
+    "regions": ["gavi"],
+    "styleByRegion": {
+      "gavi": "Piemonte DOCG (Gavi or Gavi di Gavi). Cortese-based dry white. Light-bodied, unoaked, with high acidity, floral and citrus character; typically for early drinking."
+    }
+  },
+
+  {
+    "id": "garganega",
+    "name": "Garganega",
+    "kind": "white",
+    "syllabus": { "chapter": "21", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "high", "body": "medium-bodied", "sweetness": "dry" },
+    "climate": ["moderate"],
+    "primaryAromas": ["apple", "pear", "lemon", "peach"],
+    "primaryAromasNote": "Green fruit (apple, pear), citrus (lemon) and stone fruit (peach).",
+    "agedAromas": ["honey", "almond"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Dry or sweet", "Medium-bodied", "Unoaked", "Typically for early drinking"],
+    "regions": ["soave", "soave-classico"],
+    "styleByRegion": {
+      "soave": "Veneto DOC, near Verona. Garganega-based dry whites; medium-bodied, unoaked, with high acidity and green fruit, citrus and stone fruit. Mostly for early drinking. Sweet style is Recioto di Soave (DOCG).",
+      "soave-classico": "Hilly heart of the Soave zone (the historic 'classico' core). Same Garganega-based whites but generally higher quality and more concentrated; very good or outstanding examples can age, developing honey and almond notes."
+    }
+  },
+
+  {
+    "id": "verdicchio",
+    "name": "Verdicchio",
+    "kind": "white",
+    "syllabus": { "chapter": "21", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "high", "body": "medium-bodied", "sweetness": "dry" },
+    "climate": ["moderate"],
+    "primaryAromas": ["apple", "pear", "lemon", "fennel"],
+    "primaryAromasNote": "Green fruit (apple, pear), citrus (lemon) and herbal (fennel).",
+    "agedAromas": ["honey", "nuts"],
+    "agingNote": "Outstanding examples can age",
+    "winemaking": ["Dry", "Medium-bodied", "Unoaked", "Typically for early drinking"],
+    "regions": ["verdicchio-dei-castelli-di-jesi"],
+    "styleByRegion": {
+      "verdicchio-dei-castelli-di-jesi": "Marche, central Italy. Dry, medium-bodied, unoaked Verdicchio with high acidity and characteristic green fruit, lemon and herbal (fennel) notes. Typically for early drinking; outstanding examples can age, developing honey and nuts."
+    }
+  },
+
+  {
+    "id": "fiano",
+    "name": "Fiano",
+    "kind": "white",
+    "syllabus": { "chapter": "21", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "medium", "body": "medium- to full-bodied", "sweetness": "dry" },
+    "climate": ["moderate", "warm"],
+    "primaryAromas": ["peach", "melon", "mango"],
+    "primaryAromasNote": "Stone fruit (peach) and tropical fruit (melon, mango).",
+    "agedAromas": ["honey"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Dry", "Medium- to full-bodied", "Oaked or unoaked", "Can be aged on lees", "Typically for early drinking"],
+    "regions": ["fiano-di-avellino"],
+    "styleByRegion": {
+      "fiano-di-avellino": "Campania DOCG, southern Italy. Dry, medium- to full-bodied Fiano with stone and tropical fruit; can be oaked or aged on lees. Very good or outstanding examples can age, developing honey notes."
+    }
+  },
+
+  {
+    "id": "nebbiolo",
+    "name": "Nebbiolo",
+    "kind": "black",
+    "syllabus": { "chapter": "22", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "high", "tannin": "high", "body": "full-bodied", "sweetness": "dry" },
+    "climate": ["moderate"],
+    "primaryAromas": ["red cherry", "red plum", "rose", "violet", "dried herbs"],
+    "primaryAromasNote": "Red fruit (red cherry, red plum), floral (rose, violet) and herbal (dried herbs).",
+    "agedAromas": ["mushroom", "tobacco", "leather"],
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Typically single varietal", "Typically full-bodied", "Oak maturation is common"],
+    "regions": ["barolo", "barbaresco"],
+    "styleByRegion": {
+      "barolo": "Top Piemonte DOCG in the Langhe hills. Full-bodied, high-tannin, high-acid Nebbiolo of outstanding quality; oak maturation common; ages exceptionally well, developing tertiary mushroom, tobacco and leather notes.",
+      "barbaresco": "Top Piemonte DOCG, just north-east of Barolo. Full-bodied Nebbiolo, often slightly more elegant and earlier-drinking than Barolo; outstanding ageing potential."
+    }
+  },
+
+  {
+    "id": "barbera",
+    "name": "Barbera",
+    "kind": "black",
+    "syllabus": { "chapter": "22", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "high", "tannin": "low to medium", "body": "medium-bodied", "sweetness": "dry" },
+    "climate": ["moderate", "warm"],
+    "primaryAromas": ["red cherry", "red plum", "black pepper"],
+    "primaryAromasNote": "Red fruit (red cherry, red plum) with black pepper spice.",
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": ["Typically single varietal", "Simple or complex", "Oaked or unoaked", "Can be for early drinking"],
+    "regions": ["barbera-d-asti"],
+    "styleByRegion": {
+      "barbera-d-asti": "Piemonte DOCG. Single varietal Barbera with high acidity, low to medium tannin, red fruit and black pepper spice. Oaked or unoaked styles; can be for early drinking, very good examples can age."
+    }
+  },
+
+  {
+    "id": "corvina",
+    "name": "Corvina",
+    "kind": "black",
+    "syllabus": { "chapter": "22", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "high", "tannin": "low to medium", "body": "light- to full-bodied", "sweetness": "dry" },
+    "climate": ["moderate"],
+    "primaryAromas": ["red cherry", "red plum"],
+    "primaryAromasNote": "Red fruit (red cherry, red plum).",
+    "agingNote": "Very good or outstanding examples can age (especially Amarone)",
+    "winemaking": [
+      "Often blended with local varieties",
+      "Light- to full-bodied",
+      "Appassimento method sometimes used (grapes dried before fermentation)",
+      "Can be for early drinking"
+    ],
+    "blendingNotes": "Corvina is the principal grape, blended with local varieties such as Rondinella and Molinara. Appassimento method (drying grapes for several months) is used to make Amarone (full-bodied dry red) and Recioto (sweet red).",
+    "regions": ["valpolicella", "valpolicella-classico"],
+    "styleByRegion": {
+      "valpolicella": "Veneto DOC, east of Lake Garda. Corvina-based blend with local varieties. From fresh grapes — light- to medium-bodied, fresh, with red cherry and red plum; usually for early drinking. Top wines (Amarone, Recioto) are made from dried grapes by the appassimento method.",
+      "valpolicella-classico": "Hilly heart of the Valpolicella zone (the historic 'classico' core). Same Corvina-based blend, generally higher quality and more concentrated than basic Valpolicella."
+    }
+  },
+
+  {
+    "id": "sangiovese",
+    "name": "Sangiovese",
+    "kind": "black",
+    "syllabus": { "chapter": "23", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "high", "tannin": "high", "body": "medium- to full-bodied", "sweetness": "dry" },
+    "climate": ["moderate", "warm"],
+    "primaryAromas": ["red cherry", "red plum", "dried herbs"],
+    "primaryAromasNote": "Red fruit (red cherry, red plum) and herbal (dried herbs).",
+    "agingNote": "Very good or outstanding examples can age",
+    "winemaking": [
+      "Often blended with local and international varieties",
+      "Medium- to full-bodied",
+      "Often oaked",
+      "Can be for early drinking"
+    ],
+    "blendingNotes": "Often blended with local Tuscan varieties (Canaiolo, Colorino) and increasingly with international varieties (Cabernet Sauvignon, Merlot). Brunello di Montalcino is made from 100% Sangiovese.",
+    "regions": ["chianti", "chianti-classico", "brunello-di-montalcino"],
+    "styleByRegion": {
+      "chianti": "Tuscany DOCG. Sangiovese-dominant blends with local and international varieties. Medium- to full-bodied, often oaked, with high acidity, high tannin and red fruit/dried herbs. Wide quality range; can be for early drinking.",
+      "chianti-classico": "Hilly heart of the Chianti zone (the historic 'classico' core), now its own DOCG. Higher-quality Sangiovese-based wines than basic Chianti; very good to outstanding examples can age. Riserva indicates extended ageing.",
+      "brunello-di-montalcino": "Top Tuscany DOCG, made from 100% Sangiovese (locally called Brunello). Concentrated, full-bodied, high-tannin wines with extensive oak ageing requirements; outstanding ageing potential."
+    }
+  },
+
+  {
+    "id": "montepulciano",
+    "name": "Montepulciano",
+    "kind": "black",
+    "syllabus": { "chapter": "23", "session": 6, "learningOutcome": 4, "category": "regional" },
+    "characteristics": { "acidity": "medium to high", "tannin": "medium", "body": "medium- to full-bodied", "sweetness": "dry" },
+    "climate": ["warm"],
+    "primaryAromas": ["plum", "blackberry"],
+    "primaryAromasNote": "Black fruit (plum, blackberry). [Verify against textbook chapter 23 — not covered in the L2E06 lesson PDF.]",
+    "winemaking": ["Often blended", "Medium- to full-bodied", "Oaked or unoaked"],
+    "regions": ["montepulciano-d-abruzzo"],
+    "styleByRegion": {
+      "montepulciano-d-abruzzo": "Abruzzo DOC, central Italy on the Adriatic coast. Medium- to full-bodied red from the Montepulciano grape (NOT to be confused with Tuscany's Vino Nobile di Montepulciano, which is Sangiovese-based). Soft, approachable, with black fruit; often good value."
+    }
+  },
+  {
+    "id": "meunier",
+    "name": "Meunier",
+    "alternateName": "Pinot Meunier",
+    "kind": "black",
+    "syllabus": { "chapter": "26", "session": 7, "learningOutcome": 5, "category": "sparkling" },
+    "characteristics": { "acidity": "high", "tannin": "low", "body": "light- to medium-bodied", "sweetness": "dry" },
+    "climate": ["cool"],
+    "primaryAromas": ["red apple", "lemon"],
+    "primaryAromasNote": "One of the three permitted grapes in Champagne, alongside Chardonnay and Pinot Noir. Buds late and ripens early — useful in Champagne's marginal climate. Contributes fruitiness and approachability to non-vintage blends.",
+    "winemaking": ["Used as base wine for Traditional Method sparkling", "Blended with Chardonnay and Pinot Noir"],
+    "blendingNotes": "Almost always blended in Champagne with Chardonnay (acidity, finesse) and Pinot Noir (body, structure).",
+    "regions": ["champagne"],
+    "styleByRegion": {
+      "champagne": "One of the three permitted Champagne grapes. Adds fruity, approachable character to non-vintage blends. Rarely seen as a single varietal."
+    }
+  },
+  {
+    "id": "glera",
+    "name": "Glera",
+    "kind": "white",
+    "syllabus": { "chapter": "26", "session": 7, "learningOutcome": 5, "category": "sparkling" },
+    "characteristics": { "acidity": "medium to high", "body": "light-bodied", "sweetness": "off-dry" },
+    "climate": ["moderate"],
+    "primaryAromas": ["apple", "pear"],
+    "primaryAromasNote": "Glera's character is fresh apple and pear with floral notes; the Tank Method (Charmat) preserves these primary fruit aromas rather than developing autolytic complexity.",
+    "winemaking": ["Tank Method (second fermentation in pressurised tank)", "Bottled under pressure to preserve fresh fruit", "Made for early drinking — does not benefit from ageing"],
+    "regions": ["prosecco"],
+    "styleByRegion": {
+      "prosecco": "The grape of Prosecco DOC (Veneto/Friuli). Light-bodied sparkling, off-dry to dry, with apple and pear. Charmat Method preserves primary fruit. Made for early drinking."
+    }
+  },
+  {
+    "id": "muscat",
+    "name": "Muscat",
+    "alternateName": "Moscato / Muscat Blanc à Petits Grains",
+    "kind": "white",
+    "syllabus": { "chapter": "26", "session": 7, "learningOutcome": 5, "category": "sparkling" },
+    "characteristics": { "acidity": "medium to high", "body": "light-bodied", "sweetness": "sweet" },
+    "climate": ["moderate", "warm"],
+    "primaryAromas": ["grape", "orange blossom", "rose"],
+    "primaryAromasNote": "One of the few grapes whose wine smells distinctly like fresh grapes. Highly aromatic with floral (rose, orange blossom) and fresh-grape character.",
+    "winemaking": ["Asti DOCG: Tank Method, fermentation stopped early — sweet, low-alcohol, lightly sparkling", "Moscato d'Asti: lightly sparkling (frizzante), even lower alcohol", "Also made as fortified sweet wine (e.g. Muscat de Beaumes-de-Venise)"],
+    "regions": ["asti"],
+    "styleByRegion": {
+      "asti": "Piedmont DOCG. Sweet, lightly sparkling, low-alcohol. Tank Method with fermentation stopped early to retain natural grape sugar. Intensely grapey and floral; balanced by high acidity. Made for early drinking."
+    }
+  }
+]
