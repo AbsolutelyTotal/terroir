@@ -425,6 +425,27 @@
     .panel { border-left: none; border-top: 1px solid rgba(0,0,0,0.12); box-shadow: inset 0 8px 16px -8px rgba(0,0,0,0.18); }
     body { overflow: auto; }
   }
+  @media (max-width: 600px) {
+    header { padding: 0 14px; height: 42px; }
+    .wordmark { font-size: 12.5px; gap: 6px; }
+    .info-btn { padding: 6px 11px; font-size: 12px; }
+
+    .filter-bar { padding: 10px 14px; gap: 6px; }
+    .filter-bar.grouped { gap: 10px; }
+    .filter-bar:not(.grouped) { grid-template-columns: 1fr; gap: 6px; }
+    .filter-bar:not(.grouped) .label { padding-top: 0; }
+    .grape-group { grid-template-columns: 1fr; gap: 4px; }
+    .grape-group .group-label { padding-top: 0; }
+
+    .chip { padding: 8px 13px; font-size: 13px; }
+    .clear-btn { padding: 8px 13px; font-size: 12.5px; margin-left: 0; align-self: flex-start; }
+
+    main { grid-template-rows: 42vh 1fr; }
+    .panel { padding: 22px 18px 60px; }
+    .panel h2 { font-size: 24px; }
+
+    .popover-backdrop { padding: 14px; align-items: center; justify-content: center; }
+  }
 </style>
 </head>
 <body>
@@ -732,6 +753,13 @@
       el.onclick = () => selectRegion(el.dataset.regionId);
     });
     panel.scrollTop = 0;
+
+    // On stacked (mobile) layouts, scroll the panel into view so a tap on the
+    // map doesn't appear to do nothing.
+    const hasSelection = selectedRegionId || selectedGrapeId || selectedCountry;
+    if (hasSelection && window.matchMedia('(max-width: 900px)').matches) {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   function renderGrape(id) {
