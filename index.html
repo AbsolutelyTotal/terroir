@@ -320,6 +320,23 @@
     line-height: 1.15;
     letter-spacing: -0.3px;
   }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #7a2733;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 14px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .back-link:hover { color: #2a0e15; text-decoration: underline; }
   .panel .subtitle {
     font-size: 11px;
     color: #6c645a;
@@ -707,6 +724,14 @@
     map.setView([25, 10], 2);
   }
 
+  function goBackFromRegion() {
+    selectedRegionId = null;
+    updateChrome();
+    highlightRegions();
+    renderPanel();
+    fitToFilters();
+  }
+
   function updateChrome() {
     document.querySelectorAll('.chip').forEach(c => {
       if (c.dataset.grapeId) {
@@ -786,6 +811,7 @@
     panel.querySelectorAll('[data-region-id]').forEach(el => {
       el.onclick = () => selectRegion(el.dataset.regionId);
     });
+    panel.querySelector('#back-from-region')?.addEventListener('click', goBackFromRegion);
     panel.scrollTop = 0;
 
     // On stacked (mobile) layouts, scroll the panel into view so a tap on the
@@ -950,7 +976,15 @@
       </li>`;
     }).join('');
 
+    const backTarget = selectedGrapeId
+      ? grapeById[selectedGrapeId]?.name
+      : (selectedCountry || null);
+    const backHtml = backTarget
+      ? `<button class="back-link" id="back-from-region" type="button">← Back to ${backTarget}</button>`
+      : '';
+
     return `
+      ${backHtml}
       <h2>${countryFlag(r.country)} ${r.name}</h2>
       <div class="subtitle">${trailStr || r.country}${r.giClass ? ` · ${r.giClass}` : ''}</div>
       <div class="meta">${meta}</div>
