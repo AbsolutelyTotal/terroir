@@ -402,6 +402,8 @@
   }
   .region-list li { cursor: pointer; }
   .region-list li:hover { background: #ebe2cf; }
+  .grape-list li[data-grape-id] { cursor: pointer; }
+  .grape-list li[data-grape-id]:hover { background: #ebe2cf; }
 
   .region-list .region-name, .grape-list .grape-name {
     font-weight: 600;
@@ -807,9 +809,12 @@
     } else {
       panel.innerHTML = '<div class="empty">Pick a grape, a country, or a region to start exploring.<div class="hint">Pin colour shows climate. Larger pins = filtered/principal sites.</div></div>';
     }
-    // wire any region links
+    // wire any region / grape links
     panel.querySelectorAll('[data-region-id]').forEach(el => {
       el.onclick = () => selectRegion(el.dataset.regionId);
+    });
+    panel.querySelectorAll('[data-grape-id]').forEach(el => {
+      el.onclick = () => selectGrape(el.dataset.grapeId);
     });
     panel.querySelector('#back-from-region')?.addEventListener('click', goBackFromRegion);
     panel.scrollTop = 0;
@@ -910,7 +915,7 @@
 
     const grapeChip = g => {
       const dot = g.kind === 'black' ? '#5d2330' : '#d4b94e';
-      return `<span class="meta-item" style="display:inline-flex;align-items:center;gap:6px;cursor:pointer;" onclick="event.stopPropagation();">
+      return `<span class="meta-item" data-grape-id="${g.id}" style="display:inline-flex;align-items:center;gap:6px;cursor:pointer;">
         <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${dot};"></span>${g.name}
       </span>`;
     };
@@ -970,7 +975,7 @@
       const note = g.styleByRegion?.[id];
       const cat = g.syllabus.category;
       const dot = g.kind === 'black' ? '#5d2330' : '#d4b94e';
-      return `<li>
+      return `<li data-grape-id="${g.id}">
         <div class="grape-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${dot};flex-shrink:0;"></span>${g.name}${g.alternateName ? ` / ${g.alternateName}` : ''} <span style="font-size:11px;color:#8b8273;font-weight:400;">(${cat})</span></div>
         ${note ? `<div class="grape-style">${note}</div>` : ''}
       </li>`;
