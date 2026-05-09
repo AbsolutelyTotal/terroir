@@ -83,3 +83,9 @@ When adding a new grape or region, update **both sides** so the cross-links stay
 ## 🚧 Status
 
 Reference mode only — no quiz mode yet.
+
+## ⚖️ License
+
+- **Code** (`index.html` + any future source files): [MIT](LICENSE).
+- **Data** (`data/*.json`): study notes derived from copyrighted WSET Level 2 materials and not licensed for redistribution. Use as a personal study reference; verify against the original WSET sources for anything authoritative.
+- This project is **not affiliated with or endorsed by WSET**.
