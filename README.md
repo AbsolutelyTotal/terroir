@@ -4,11 +4,11 @@
 
 **Interactive grape-centric study map for the WSET Level 2 Award in Wines.**
 
-<a href="https://absolutelytotal.github.io/terroir/">
+<a href="https://terroir.cc/">
   <img src="assets/screenshot.png" alt="WSET L2 wine map screenshot" width="800">
 </a>
 
-[🌐 Live demo](https://absolutelytotal.github.io/terroir/) · [📚 About WSET](#-about-wset)
+[🌐 Live demo](https://terroir.cc/) · [📚 About WSET](#-about-wset)
 
 ![Stack](https://img.shields.io/badge/stack-vanilla_JS-f7df1e?logo=javascript&logoColor=000)
 ![Map](https://img.shields.io/badge/map-Leaflet-199900?logo=leaflet&logoColor=fff)
