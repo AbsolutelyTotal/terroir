@@ -14,6 +14,7 @@
 ![Map](https://img.shields.io/badge/map-Leaflet-199900?logo=leaflet&logoColor=fff)
 ![Build](https://img.shields.io/badge/build-none-555)
 ![Pages](https://img.shields.io/badge/hosting-GitHub_Pages-222?logo=github)
+[![Buy me a glass of wine](https://img.shields.io/badge/buy_me_a-glass_of_wine-d4504e?logo=buymeacoffee&logoColor=fff)](https://buymeacoffee.com/mqjcaml)
 
 </div>
 
